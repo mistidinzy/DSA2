@@ -22,7 +22,7 @@ describe('LinkedList Tests', () => {
     expect(newList.head).toBeNull();
   });
 
-    //----- INSERT METHOD -----//
+  //----- INSERT METHOD -----//
 
   // CC05-02. Can properly insert a node into the linked list.
   test('CC05-02: Can insert a new Node into the Linked List, at the front.', () => {
@@ -32,4 +32,16 @@ describe('LinkedList Tests', () => {
 
     expect(newList.head.value).toEqual(5);
   });
-})
+
+  // CC05-03. The head property will properly point to the FIRST node in the linked list.
+  test('CC05-03: Correctly defines the Head property as the first node in the list.', () => {
+    let newList = new LinkedList();
+
+    newList.insert(1);
+    expect(newList.head.value).toEqual(1);
+
+    newList.insert(4);
+    expect(newList.head.next.value).toEqual(1);
+    expect(newList.head.value).toEqual(4);
+  });
+});
