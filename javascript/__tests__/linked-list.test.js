@@ -21,4 +21,15 @@ describe('LinkedList Tests', () => {
 
     expect(newList.head).toBeNull();
   });
+
+    //----- INSERT METHOD -----//
+
+  // CC05-02. Can properly insert a node into the linked list.
+  test('CC05-02: Can insert a new Node into the Linked List, at the front.', () => {
+    let newList = new LinkedList();
+
+    newList.insert(5);
+
+    expect(newList.head.value).toEqual(5);
+  });
 })
