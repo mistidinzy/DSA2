@@ -84,4 +84,17 @@ describe('LinkedList Tests', () => {
       let result = newList.includes(7);
       expect(result).toEqual(false);
     });
+
+    //----- TO-STRING METHOD -----//
+
+  // CC05-07. Can properly return all of the values in the linked list, as a string.
+  test('CC05-07: Returns a string containing all values of the linked list.', () => {
+    let list = new LinkedList();
+
+    list.insert(5);
+    list.insert(4);
+    list.insert(3);
+
+    expect(list.toString()).toEqual('{ 3 } -> { 4 } -> { 5 } -> NULL');
+  });
 });
