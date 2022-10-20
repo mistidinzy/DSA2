@@ -44,4 +44,44 @@ describe('LinkedList Tests', () => {
     expect(newList.head.next.value).toEqual(1);
     expect(newList.head.value).toEqual(4);
   });
+
+  // CC05-04. Can properly insert multiple nodes into the linked list.
+  test('CC05-04: Can add multiple nodes into a linked list.', () => {
+    let newList = new LinkedList();
+
+    newList.insert(1);
+    expect(newList.head.value).toEqual(1);
+
+    newList.insert(2);
+    expect(newList.head.next.value).toEqual(1);
+
+    newList.insert(3);
+    expect(newList.head.next.next.value).toEqual(1);
+
+    expect(newList.head.value).toEqual(3);
+    expect(newList.head.next.value).toEqual(2);
+  });
+
+   // CC05-05. Can confirm if a value is found within the linked list.
+   test('CC05-05: Will return TRUE if value exists within the list.', () => {
+    let newList = new LinkedList();
+
+    newList.insert(2);
+    newList.insert(4);
+    newList.insert(6);
+
+    let result = newList.includes(4);
+
+    expect(result).toEqual(true);
+  });
+
+    // CC05-06. Will return FALSE when searching for a value in the linked list that does not exist.
+    test('CC05-06: Will return FALSE if value does not exist within the list.', () => {
+      let newList = new LinkedList();
+      newList.insert(2);
+      newList.insert(4);
+      newList.insert(6);
+      let result = newList.includes(7);
+      expect(result).toEqual(false);
+    });
 });

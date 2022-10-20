@@ -13,6 +13,18 @@ class LinkedList {
     node.next = this.head;
     this.head = node;
   }
+
+  //Indicates whether or not a specified value exists somewhere within the list.
+  includes(value) {
+    let current = this.head;
+    while (current !== null) {
+      if (current.value === value) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
 }
 
 module.exports = LinkedList;
