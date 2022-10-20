@@ -1,23 +1,15 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+## 401 - Javascript
 
-## Repository Quick Tour and Usage
+| Course Module | Topic |
+|-----------------|-----------|
+| 01 | [Arrays](/javascript/array/README.md) |
+| 02 | [Linked Lists](/javascript/linked-list/README.md) |
+| 03 | [Stacks, Queues](/javascript/stacks-and-queues/README.md) |
+| 04 | [Trees](/javascript/Tree/README.md) |
+| 06 | [Sorting](/javascript/Sorting/README.md) |
+| 07 | [Hash Tables](/javascript/HashTable/README.md) |
+| 08 | [Graphs](/javascript/Graph/README.md) |
 
-### 301 Code Challenges
-
-Under the `javascript` folder, at the top level, is a sub-folder called `code-challenges`
-
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
-
-If you have not already done so, run `npm install` from within this folder to setup your system to be able to run tests using `Jest`
-
-To run your tests
-
-- Change to the `javascript` folder
-- run `npm test` to run all of the tests
-- run `npm test ##` to only run tests for challenge ## (i.e. 01)
-
-### 401 Data Structures, Code Challenges
-
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+---
