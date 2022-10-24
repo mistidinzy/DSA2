@@ -97,4 +97,18 @@ describe('LinkedList Tests', () => {
 
     expect(list.toString()).toEqual('{ 3 } -> { 4 } -> { 5 } -> NULL');
   });
+
+  //----- APPEND METHOD -----//
+
+  // CC06-01. Can successfully add a node to the END of the linked list.
+  test('CC06-01: Can add a new Node to the END of the list.', () => {
+    let list = new LinkedList();
+    list.insert(5);
+    list.insert(4);
+    list.append(6);
+
+    expect(list.head.value).toEqual(4);
+    expect(list.head.next.value).toEqual(5);
+    expect(list.head.next.next.value).toEqual(6);
+  });
 });
