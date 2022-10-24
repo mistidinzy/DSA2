@@ -53,6 +53,33 @@ class LinkedList {
     current.next = new Node(value);
   }
 
+   //Finds the first occurence of a given value, and adds the new value immediately BEFORE it.
+   insertBefore(value, newValue) {
+    if (!this.head) {
+      throw new Error('Linked List is Empty!');
+    }
+
+    if (this.head.value === value) {
+      this.insert(newValue);
+      return;
+    }
+
+    let current = this.head;
+
+    while (current) {
+      if (current.next && current.next.value === value) {
+        let newNode = new Node(newValue);
+
+        newNode.next = current.next;
+        current.next = newNode;
+
+        current = current.next.next;
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
 
 
 
