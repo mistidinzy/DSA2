@@ -26,17 +26,23 @@ class LinkedList {
     return false;
   }
 
-    //Returns list values as a string.
-    toString() {
-      let str = '';
-      let current = this.head;
-      while (current !== null) {
-        str += `{ ${current.value} } -> `;
-        current = current.next;
-      }
-      str += 'NULL';
-      return str;
+  //Returns list values as a string.
+  toString() {
+    let str = '';
+    let current = this.head;
+    while (current !== null) {
+      str += `{ ${current.value} } -> `;
+      current = current.next;
     }
+    str += 'NULL';
+    return str;
+  }
+
+  
+
+
+
+
 }
 
 module.exports = LinkedList;
