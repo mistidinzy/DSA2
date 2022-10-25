@@ -7,6 +7,32 @@ class LinkedList {
     this.head = null;
   }
 
+    //Creates a new LinkedList from an array, in SAME index order as array.
+    fromArray(arr) {
+      let previous = null;
+
+      for (let i = arr.length - 1; i >= 0; i--) {
+        let value = arr[i];
+        let node = new Node(value);
+        node.next = previous;
+        previous = node;
+      }
+
+      let list = new LinkedList();
+      list.head = previous;
+      return list;
+    }
+
+    //Creates a new LinkedList from an array, in REVERSE index order as array.
+    reverseFromArray(arr) {
+      let list = new LinkedList();
+
+      for (let i = 0; i < arr.length; i++) {
+        list.insert(arr[i]);
+      }
+      return list;
+    }
+
   //Inserts a new node to the FRONT(HEAD) of the list.
   insert(value) {
     let node = new Node(value);
