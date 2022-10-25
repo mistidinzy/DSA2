@@ -217,4 +217,18 @@ describe('LinkedList Tests', () => {
     expect(list.head.next.next.next.value).toEqual(9);
   });
 
+   // Can create a linked list from an array, in reverse index order.
+   test('3. Can create a LinkedList from an array, in REVERSE index order.', () => {
+    let arr = [5,4,3,2,1];
+    let list = new LinkedList().reverseFromArray([5,4,3,2,1]);
+
+    // console.log(arr, ' => ', list.toString());
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.next.value).toEqual(5);
+  });
+
 });
