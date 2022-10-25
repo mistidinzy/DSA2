@@ -139,6 +139,22 @@ class LinkedList {
     }
   }
 
+   //Returns the value of the last node in the list.
+   getLast() {
+    if (!this.head) {
+      throw new Error('Linked List is empty!');
+    } else {
+      let current = this.head;
+
+      while (current) {
+        if (!current.next) {
+          return current.value;
+        }
+        current = current.next;
+      }
+    }
+  }
+
 
 
 
