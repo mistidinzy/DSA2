@@ -189,4 +189,20 @@ describe('LinkedList Tests', () => {
   });
 
 
+  //----- ADDITIONAL TESTS -----//
+
+  // Can count how many times a value occurs in the linked list.
+  test('1. Can correctly count occurrences of a value.', () => {
+    let newList = new LinkedList();
+
+    newList.insert(1);
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.insert(1);
+
+    expect(newList.occurrences(1)).toEqual(3);
+  });
+
+
 });
