@@ -79,6 +79,30 @@ class LinkedList {
     current.next = new Node(value);
   }
 
+   //Deletes a node from the list
+   delete(value) {
+    if (this.head.value === value) {
+      let temp = this.head;
+      this.head = this.head.next;
+      return temp.value;
+    }
+
+    let current = this.head;
+
+    while (current.next.value !== value) {
+      current = current.next;
+    }
+
+    let temp = current.next;
+    current.next = current.next.next;
+    return temp.value;
+  }
+
+  //Empties out the list.
+  clear() {
+    this.head = null;
+  }
+
    //Finds the first occurence of a given value, and adds the new value immediately BEFORE it.
    insertBefore(value, newValue) {
     if (!this.head) {
