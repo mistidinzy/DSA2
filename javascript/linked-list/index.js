@@ -106,6 +106,21 @@ class LinkedList {
     }
   }
 
+  findMiddle() {
+    if (!this.head) {
+      return new Error('Linked List is empty!');
+    } else {
+      let slowPointer = this.head;
+      let fastPointer = this.head;
+
+      while (fastPointer && fastPointer.next) {
+        slowPointer = slowPointer.next;
+        fastPointer = fastPointer.next.next;
+      }
+      return slowPointer.value;
+    }
+  }
+
 
 
 
