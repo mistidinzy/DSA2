@@ -164,4 +164,19 @@ describe('LinkedList Tests', () => {
     expect(list.head.next.next.value).toEqual(4);
     expect(list.head.next.next.next.value).toEqual(3);
   });
+
+    // CC06-06. Can successfully insert a node AFTER the LAST node of the linked list.
+    test('CC06-06: Can insert node AFTER the LAST node in list.', () => {
+      let list = new LinkedList().fromArray([1,2,3,4,5]);
+      let end = list.getLast();
+      list.insertAfter(end,6);
+
+      expect(list.head.value).toEqual(1);
+      expect(list.head.next.value).toEqual(2);
+      expect(list.head.next.next.value).toEqual(3);
+      expect(list.head.next.next.next.value).toEqual(4);
+      expect(list.head.next.next.next.next.value).toEqual(5);
+      expect(list.head.next.next.next.next.next.value).toEqual(6);
+    });
+
 });
