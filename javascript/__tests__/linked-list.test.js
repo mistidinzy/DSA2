@@ -111,4 +111,34 @@ describe('LinkedList Tests', () => {
     expect(list.head.next.value).toEqual(5);
     expect(list.head.next.next.value).toEqual(6);
   });
+
+   // CC06-02. Can successfully add multiple nodes to the END of a linked list.
+   test('CC06-02: Can add multiple nodes to the END of the list.', () => {
+    let list = new LinkedList();
+
+    list.insert(3);
+    list.insert(2);
+    list.insert(1);
+
+    list.append(6);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(6);
+  });
+
+    //----- INSERT-BEFORE METHOD -----//
+
+  // CC06-03. Can successfully insert a node BEFORE the MIDDLE node of a linked list.
+  test('CC06-03: Can insert node BEFORE the MIDDLE node in list.', () => {
+    let list = new LinkedList().fromArray([1,2,4,5]);
+    let mid = list.findMiddle();
+    list.insertBefore(mid,3);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(4);
+  });
 });
