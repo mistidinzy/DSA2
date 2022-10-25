@@ -179,4 +179,14 @@ describe('LinkedList Tests', () => {
       expect(list.head.next.next.next.next.next.value).toEqual(6);
     });
 
+      //----- DELETE METHOD -----//
+
+  //Can successfully delete a specified node from the list.
+  test('CC06-SG: Can delete given node from the list.', () => {
+    let list = new LinkedList().fromArray([5,4,3,2,1]);
+    list.delete(3);
+    expect(list.occurrences(3)).toEqual(0);
+  });
+
+
 });
