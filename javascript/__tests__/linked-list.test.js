@@ -204,5 +204,17 @@ describe('LinkedList Tests', () => {
     expect(newList.occurrences(1)).toEqual(3);
   });
 
+   // Can create a linked list from an array, in same index order.
+   test('2. Can create a LinkedList from an array, in SAME index order.', () => {
+    let arr = [6,7,8,9];
+    let list = new LinkedList().fromArray([6,7,8,9]);
+
+    // console.log(arr, ' => ', list.toString());
+
+    expect(list.head.value).toEqual(6);
+    expect(list.head.next.value).toEqual(7);
+    expect(list.head.next.next.value).toEqual(8);
+    expect(list.head.next.next.next.value).toEqual(9);
+  });
 
 });
