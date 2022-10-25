@@ -40,6 +40,17 @@ class LinkedList {
     this.head = node;
   }
 
+  //Returns the total number of nodes present in the list.
+  size() {
+    let count = 0;
+    let node = this.head;
+    while (node) {
+      count++;
+      node = node.next;
+    }
+    return count;
+  }
+
   //Indicates whether or not a specified value exists somewhere within the list.
   includes(value) {
     let current = this.head;
@@ -50,6 +61,17 @@ class LinkedList {
       current = current.next;
     }
     return false;
+  }
+
+   //Counts the number of times a specific value occurs within the list.
+   occurrences(valueToCount) {
+    let current = this.head;
+    let count = 0;
+    while (current !== null) {
+      if (current.value === valueToCount) count++;
+      current = current.next;
+    }
+    return count;
   }
 
   //Returns list values as a string.
