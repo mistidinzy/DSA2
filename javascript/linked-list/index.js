@@ -106,6 +106,24 @@ class LinkedList {
     }
   }
 
+    //Finds the first occurence of a given value, and adds the new value immediately AFTER it.
+    insertAfter(value, newValue) {
+      if (!this.head) {
+        throw new Error('Linked List is empty!');
+      }
+
+      let current = this.head;
+
+      while (current) {
+        if (current.value === value) {
+          let newNode = new Node(newValue);
+          newNode.next = current.next;
+          current.next = newNode;
+        }
+        current = current.next;
+      }
+    }
+
   findMiddle() {
     if (!this.head) {
       return new Error('Linked List is empty!');

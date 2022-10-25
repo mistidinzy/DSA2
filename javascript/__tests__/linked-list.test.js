@@ -150,4 +150,18 @@ describe('LinkedList Tests', () => {
 
     expect(list.head.value).toEqual(0);
   });
+
+   //----- INSERT-AFTER METHOD -----//
+
+  // CC06-05. Can successfully insert a node AFTER the middle node of a linked list.
+  test('CC06-05: Can insert node AFTER the MIDDLE node in list.', () => {
+    let list = new LinkedList().fromArray([1,2,4,5]);
+    let mid = list.findMiddle();
+    list.insertAfter(mid,3);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.value).toEqual(3);
+  });
 });
