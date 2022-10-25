@@ -141,4 +141,13 @@ describe('LinkedList Tests', () => {
     expect(list.head.next.next.value).toEqual(3);
     expect(list.head.next.next.next.value).toEqual(4);
   });
+
+   // CC06-04. Can successfully insert a node BEFORE the FIRST node of a linked list.
+   test('CC06-04: Can insert new node BEFORE the FIRST node in list.', () => {
+    let list = new LinkedList().fromArray([1,2,3]);
+    let head = list.head.value;
+    list.insertBefore(head, 0);
+
+    expect(list.head.value).toEqual(0);
+  });
 });
