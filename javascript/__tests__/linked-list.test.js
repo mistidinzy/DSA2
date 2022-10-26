@@ -62,8 +62,8 @@ describe('LinkedList Tests', () => {
     expect(newList.head.next.value).toEqual(2);
   });
 
-   // CC05-05. Can confirm if a value is found within the linked list.
-   test('CC05-05: Will return TRUE if value exists within the list.', () => {
+  // CC05-05. Can confirm if a value is found within the linked list.
+  test('CC05-05: Will return TRUE if value exists within the list.', () => {
     let newList = new LinkedList();
 
     newList.insert(2);
@@ -75,17 +75,17 @@ describe('LinkedList Tests', () => {
     expect(result).toEqual(true);
   });
 
-    // CC05-06. Will return FALSE when searching for a value in the linked list that does not exist.
-    test('CC05-06: Will return FALSE if value does not exist within the list.', () => {
-      let newList = new LinkedList();
-      newList.insert(2);
-      newList.insert(4);
-      newList.insert(6);
-      let result = newList.includes(7);
-      expect(result).toEqual(false);
-    });
+  // CC05-06. Will return FALSE when searching for a value in the linked list that does not exist.
+  test('CC05-06: Will return FALSE if value does not exist within the list.', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(4);
+    newList.insert(6);
+    let result = newList.includes(7);
+    expect(result).toEqual(false);
+  });
 
-    //----- TO-STRING METHOD -----//
+  //----- TO-STRING METHOD -----//
 
   // CC05-07. Can properly return all of the values in the linked list, as a string.
   test('CC05-07: Returns a string containing all values of the linked list.', () => {
@@ -96,5 +96,150 @@ describe('LinkedList Tests', () => {
     list.insert(3);
 
     expect(list.toString()).toEqual('{ 3 } -> { 4 } -> { 5 } -> NULL');
+  });
+
+  //----- APPEND METHOD -----//
+
+  // CC06-01. Can successfully add a node to the END of the linked list.
+  test('CC06-01: Can add a new Node to the END of the list.', () => {
+    let list = new LinkedList();
+    list.insert(5);
+    list.insert(4);
+    list.append(6);
+
+    expect(list.head.value).toEqual(4);
+    expect(list.head.next.value).toEqual(5);
+    expect(list.head.next.next.value).toEqual(6);
+  });
+
+  // CC06-02. Can successfully add multiple nodes to the END of a linked list.
+  test('CC06-02: Can add multiple nodes to the END of the list.', () => {
+    let list = new LinkedList();
+
+    list.insert(3);
+    list.insert(2);
+    list.insert(1);
+
+    list.append(6);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(6);
+  });
+
+  //----- INSERT-BEFORE METHOD -----//
+
+  // CC06-03. Can successfully insert a node BEFORE the MIDDLE node of a linked list.
+  test('CC06-03: Can insert node BEFORE the MIDDLE node in list.', () => {
+    let list = new LinkedList().fromArray([1, 2, 4, 5]);
+    let mid = list.findMiddle();
+    list.insertBefore(mid, 3);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(4);
+  });
+
+  // CC06-04. Can successfully insert a node BEFORE the FIRST node of a linked list.
+  test('CC06-04: Can insert new node BEFORE the FIRST node in list.', () => {
+    let list = new LinkedList().fromArray([1, 2, 3]);
+    let head = list.head.value;
+    list.insertBefore(head, 0);
+
+    expect(list.head.value).toEqual(0);
+  });
+
+  //----- INSERT-AFTER METHOD -----//
+
+  // CC06-05. Can successfully insert a node AFTER the middle node of a linked list.
+  test('CC06-05: Can insert node AFTER the MIDDLE node in list.', () => {
+    let list = new LinkedList().fromArray([1, 2, 4, 5]);
+    let mid = list.findMiddle();
+    list.insertAfter(mid, 3);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.value).toEqual(3);
+  });
+
+  // CC06-06. Can successfully insert a node AFTER the LAST node of the linked list.
+  test('CC06-06: Can insert node AFTER the LAST node in list.', () => {
+    let list = new LinkedList().fromArray([1, 2, 3, 4, 5]);
+    let end = list.getLast();
+    list.insertAfter(end, 6);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.next.value).toEqual(5);
+    expect(list.head.next.next.next.next.next.value).toEqual(6);
+  });
+
+  //----- DELETE METHOD -----//
+
+  //Can successfully delete a specified node from the list.
+  test('CC06-SG: Can delete given node from the list.', () => {
+    let list = new LinkedList().fromArray([5, 4, 3, 2, 1]);
+    list.delete(3);
+    expect(list.occurrences(3)).toEqual(0);
+  });
+
+  //----- ADDITIONAL TESTS -----//
+
+  // Can count how many times a value occurs in the linked list.
+  test('1. Can correctly count occurrences of a value.', () => {
+    let newList = new LinkedList();
+
+    newList.insert(1);
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.insert(1);
+
+    expect(newList.occurrences(1)).toEqual(3);
+  });
+
+  // Can create a linked list from an array, in same index order.
+  test('2. Can create a LinkedList from an array, in SAME index order.', () => {
+    let arr = [6, 7, 8, 9];
+    let list = new LinkedList().fromArray([6, 7, 8, 9]);
+
+    expect(list.head.value).toEqual(6);
+    expect(list.head.next.value).toEqual(7);
+    expect(list.head.next.next.value).toEqual(8);
+    expect(list.head.next.next.next.value).toEqual(9);
+  });
+
+  // Can create a linked list from an array, in reverse index order.
+  test('3. Can create a LinkedList from an array, in REVERSE index order.', () => {
+    let arr = [5, 4, 3, 2, 1];
+    let list = new LinkedList().reverseFromArray([5, 4, 3, 2, 1]);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.next.value).toEqual(5);
+  });
+
+  // Can correctly return the LAST node of the list.
+  test('4. Returns correct value of LAST node.', () => {
+    let list = new LinkedList();
+
+    list.insert(4);
+    list.insert(3);
+    list.insert(2);
+
+    expect(list.getLast()).toEqual(4);
+  });
+
+  //Can correctly return MIDDLE node of list.
+  test('5. Returns correct value of MIDDLE node.', () => {
+   let list = new LinkedList().fromArray([5,4,3,2,1]);
+   expect(list.findMiddle()).toEqual(3);
   });
 });
