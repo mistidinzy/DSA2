@@ -1,6 +1,6 @@
 # Data Structures - Arrays
 
-> 🏡 **[**Home**](../README.md)**
+> 🏡 **[**Home**](../../README.md)**
 
 ---
 

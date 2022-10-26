@@ -1,6 +1,6 @@
 # Data Structures - Linked Lists
 
-> 🏡 **[**Home**](../README.md)**
+> 🏡 **[**Home**](../../README.md)**
 
 ---
 
