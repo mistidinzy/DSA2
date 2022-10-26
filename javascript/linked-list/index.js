@@ -201,9 +201,45 @@ class LinkedList {
     }
   }
 
+  kthFromEnd(k){
+    if(!this.head){
+      throw new Error('Linked List is empty!');
+    }
 
+    if(this.size() < k){
+      throw new Error('Given value is larger than list!');
+    }
 
+    if(this.size() === k){
+      return this.head.value;
+    }
 
+    if(k < 0){
+      throw new Error('Please provide a positive number!');
+    }
+
+    let first = this.head;
+    let second = this.head;
+
+    for(let i = 0; i < k; i++){
+      first = first.next;
+    }
+
+    while(first.next){
+      first = first.next;
+      second = second.next;
+    }
+    return second.next.value;
+  }
+
+  getNth(n){
+    let current = this.head;
+
+    for(let i = 0; i < n + 1; i++) {
+      current = current.next;
+    }
+    return current.value;
+  }
 }
 
 module.exports = LinkedList;

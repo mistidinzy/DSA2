@@ -188,6 +188,39 @@ describe('LinkedList Tests', () => {
     expect(list.occurrences(3)).toEqual(0);
   });
 
+
+  //----- kthFromEnd -----//
+
+  // 1. Where `k` is greater than the length of the linked list.
+  test('CC07-01: Throws an error when k is greater than length of list.', () => {
+    let list = new LinkedList().fromArray([2,4,6,8]);
+
+    expect(() => {list.kthFromEnd(17)}).toThrow('Given value is larger than list!');
+    expect(() => {list.kthFromEnd(34)}).toThrow(Error);
+  });
+
+   // 2. Where `k` and the length of the list are the same.
+   test('CC07-02: Where k and length of list are the same.', () => {
+    let list = new LinkedList().fromArray([1,3,5,7,9]);
+    expect(list.kthFromEnd(list.size())).toEqual(list.head.value);
+  });
+
+  // 3. Where `k` is not a positive integer.
+  test('CC07-03: Where k is not a positive integer.', () => {
+    let list = new LinkedList().fromArray([8,6,4,2,12,78,3]);
+
+    expect(() => {list.kthFromEnd(-4)}).toThrow(Error);
+  });
+
+  // 4. Where the linked list is of a size 1.
+
+  test('CC07-04: Where the size of linked list is 1.', () => {
+    let list = new LinkedList().fromArray([2]);
+
+    expect(() => {list.kthFromEnd(4)}).toThrow('Given value is larger than list!');
+    expect(list.kthFromEnd(1)).toEqual(list.head.value);
+  })
+
   //----- ADDITIONAL TESTS -----//
 
   // Can count how many times a value occurs in the linked list.
