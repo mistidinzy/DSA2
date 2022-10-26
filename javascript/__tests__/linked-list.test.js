@@ -205,6 +205,13 @@ describe('LinkedList Tests', () => {
     expect(list.kthFromEnd(list.size())).toEqual(list.head.value);
   });
 
+  // 3. Where `k` is not a positive integer.
+  test('CC07-03: Where k is not a positive integer.', () => {
+    let list = new LinkedList().fromArray([8,6,4,2,12,78,3]);
+
+    expect(() => {list.kthFromEnd(-4)}).toThrow(Error);
+  });
+
   //----- ADDITIONAL TESTS -----//
 
   // Can count how many times a value occurs in the linked list.
