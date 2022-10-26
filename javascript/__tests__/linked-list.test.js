@@ -212,6 +212,15 @@ describe('LinkedList Tests', () => {
     expect(() => {list.kthFromEnd(-4)}).toThrow(Error);
   });
 
+  // 4. Where the linked list is of a size 1.
+
+  test('CC07-04: Where the size of linked list is 1.', () => {
+    let list = new LinkedList().fromArray([2]);
+
+    expect(() => {list.kthFromEnd(4)}).toThrow('Given value is larger than list!');
+    expect(list.kthFromEnd(1)).toEqual(list.head.value);
+  })
+
   //----- ADDITIONAL TESTS -----//
 
   // Can count how many times a value occurs in the linked list.
