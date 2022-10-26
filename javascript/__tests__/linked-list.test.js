@@ -199,6 +199,12 @@ describe('LinkedList Tests', () => {
     expect(() => {list.kthFromEnd(34)}).toThrow(Error);
   });
 
+   // 2. Where `k` and the length of the list are the same.
+   test('CC07-02: Where k and length of list are the same.', () => {
+    let list = new LinkedList().fromArray([1,3,5,7,9]);
+    expect(list.kthFromEnd(list.size())).toEqual(list.head.value);
+  });
+
   //----- ADDITIONAL TESTS -----//
 
   // Can count how many times a value occurs in the linked list.
