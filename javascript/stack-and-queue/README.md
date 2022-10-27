@@ -17,7 +17,7 @@
 >
 > Branch Name: `stack-and-queue`
 >
-> Challenge Type: New Implementation
+> Challenge Type: `New Implementation`
 
 ---
 
@@ -108,5 +108,32 @@ You have access to the `Node` class and all the properties on the `LinkedList` c
 5. Can successfully ***peek*** into a queue, seeing the expected value
 6. Can successfully ***empty*** a queue after multiple ***dequeues***
 7. Calling dequeue or peek on empty queue raises ***exception***
+
+---
+
+## 2. **PseudoQueue**
+
+> Implement a Queue using two Stacks.
+>
+> Do not use an existing queue.
+>
+> Challenge Type: `Code Challenge / Algorithm`
+
+---
+
+### Features
+
+- `enqueue`
+  - Arguments: value.
+  - Inserts a value into the PseudoQueue, using a **first-in, first-out** approach.
+- `dequeue`
+  - Arguments: none.
+  - Extracts a value from the PseudoQueue, using a **first-in, first-out** approach.
+
+> NOTE: The Stack instances have only `push`, `pop`, and `peek` methods.
+>
+> You should use your own Stack implementation.
+>
+> Instantiate these Stack objects in your PseudoQueue constructor.
 
 ---
