@@ -129,10 +129,21 @@ describe('Queue Tests', () => {
   });
 
   test('CC10-Q.10: isEmpty returns TRUE if queue IS empty.', () => {
+    let queue = new Queue();
 
+    let result = queue.isEmpty();
+
+    expect(result).toBeTruthy();
   });
 
   test('CC10-Q.11: isEmpty returns FALSE if queue is NOT empty.', () => {
+    let queue = new Queue();
+
+    queue.enqueue(9);
+    
+    let result = queue.isEmpty();
+
+    expect(result).toBeFalsy();
 
   });
 })
