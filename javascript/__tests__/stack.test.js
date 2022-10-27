@@ -76,5 +76,18 @@ describe('Stack Tests', () => {
     expect(() => {stack.pop()}).toThrow(Error);
   });
 
+  //-----ADDITIONAL TESTS-----//
+
+  test('CC10-S.08: isEmpty returns true if stack is empty.', () => {
+    let stack = new Stack().fromArray([3,4,5,6]);
+
+    let result = stack.isEmpty();
+    expect(result).toBeFalsy();
+
+    stack.clear();
+    let result2 = stack.isEmpty();
+    expect(result2).toBeTruthy();
+  });
+
 
 })
