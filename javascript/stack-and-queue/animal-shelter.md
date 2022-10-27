@@ -8,6 +8,8 @@
 >
 > Challenge Type: `Code Challenge / Algorithm`
 
+---
+
 ## Feature Tasks
 
 - Create a class called `AnimalShelter` which holds only dogs and cats.
