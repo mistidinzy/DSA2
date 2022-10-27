@@ -24,4 +24,24 @@ describe('Stack Tests', () => {
     stack.push(5);
     expect(stack.top.value).toEqual(5);
    });
+
+   // 4. Can successfully ***pop*** off the stack
+  test('CC10-S.04: Can successfully pop values off of the stack.', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    let result = stack.pop();
+
+    expect(result).toEqual(3);
+    expect(stack.top.value).toEqual(2);
+    expect(stack.top.next.value).toEqual(1);
+
+    stack.push(7);
+    stack.push(8);
+
+    let result2 = stack.pop();
+    expect(result2).toEqual(8);
+  });
 })

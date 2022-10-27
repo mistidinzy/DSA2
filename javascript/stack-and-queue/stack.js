@@ -25,6 +25,17 @@ class Stack {
       return popped;
     }
   }
+
+  popUntilEmpty(){
+    if(!this.top){
+      throw new Error('Stack is already empty!');
+    }else {
+      let length = this.count;
+      for(let i = 0; i < length; i++){
+        this.pop();
+      }
+    }
+  }
 }
 
 module.exports = Stack;
