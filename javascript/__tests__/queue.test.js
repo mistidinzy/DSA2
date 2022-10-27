@@ -46,8 +46,19 @@ describe('Queue Tests', () => {
     queue.dequeue();
 
     expect(queue.front.value).toEqual(6);
-  })
+  });
+
   // 5. Can successfully ***peek*** into a queue, seeing the expected value
+  test('CC10-Q.05: Can get correct value from front of queue with peek().', () => {
+    let queue = new Queue();
+
+    queue.enqueue(4);
+    queue.enqueue(6);
+    queue.enqueue(8);
+
+    let result = queue.peek();
+    expect(result).toEqual(4);
+  });
 
   // 6. Can successfully ***empty*** a queue after multiple ***dequeues***
 

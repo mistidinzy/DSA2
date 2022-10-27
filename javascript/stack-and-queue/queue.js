@@ -27,6 +27,10 @@ class Queue{
 
     return temp;
   }
+
+  peek(){
+    return this.front.value;
+  }
 }
 
 module.exports = Queue;
