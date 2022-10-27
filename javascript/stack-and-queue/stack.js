@@ -7,6 +7,13 @@ class Stack {
     this.top = null;
     this.count = 0;
   }
+
+  push(value) {
+    let newNode = new Node(value);
+    newNode.next = this.top;
+    this.top = newNode;
+    this.count++;
+  }
 }
 
 module.exports = Stack;
