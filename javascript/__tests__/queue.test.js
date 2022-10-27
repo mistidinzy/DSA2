@@ -65,4 +65,23 @@ describe('Queue Tests', () => {
   // 7. Calling dequeue or peek on empty queue raises ***exception***
 
   //-----ADDITIONAL TESTS-----//
+
+  test('CC10-Q.08: Correctly updates/returns length of queue.', () => {
+    let queue = new Queue();
+
+    queue.enqueue(4);
+    expect(queue.length).toEqual(1);
+
+    queue.enqueue(6);
+    expect(queue.length).toEqual(2);
+
+    queue.enqueue(8);
+    expect(queue.length).toEqual(3);
+
+    queue.dequeue();
+    expect(queue.length).toEqual(2);
+    
+    queue.dequeue();
+    expect(queue.length).toEqual(1);
+  })
 })
