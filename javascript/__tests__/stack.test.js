@@ -70,5 +70,11 @@ describe('Stack Tests', () => {
     expect(() => {stack.peek()}).toThrow(Error);
   });
 
+  // 7. Calling pop or peek on empty stack raises ***exception***
+  test('CC10-S.07: Throws error if stack is already empty.', () => {
+    let stack = new Stack();
+    expect(() => {stack.pop()}).toThrow(Error);
+  });
+
 
 })
