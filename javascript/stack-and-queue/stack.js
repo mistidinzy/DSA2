@@ -14,6 +14,17 @@ class Stack {
     this.top = newNode;
     this.count++;
   }
+
+  pop() {
+    if (!this.top) {
+      throw new Error('Stack is already empty!');
+    } else {
+      let popped = this.top.value;
+      this.top = this.top.next;
+      this.count--;
+      return popped;
+    }
+  }
 }
 
 module.exports = Stack;
