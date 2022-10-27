@@ -9,3 +9,5 @@ class Queue{
     this.length = 0;
   }
 }
+
+module.exports = Queue;
