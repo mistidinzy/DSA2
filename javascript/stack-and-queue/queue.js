@@ -19,6 +19,14 @@ class Queue{
     }
     this.back = newNode;
   }
+
+  dequeue(){
+    let temp = this.front;
+    this.front = this.front.next;
+    temp.next = null;
+
+    return temp;
+  }
 }
 
 module.exports = Queue;

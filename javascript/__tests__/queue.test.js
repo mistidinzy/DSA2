@@ -33,10 +33,20 @@ describe('Queue Tests', () => {
 
     expect(queue.front.value).toEqual(1);
     expect(queue.back.value).toEqual(3);
-  })
+  });
 
   // 4. Can successfully ***dequeue*** value out of a queue
+  test('CC10-Q.04: Can dequeue a value from the front of the queue.', () => {
+    let queue = new Queue();
 
+    queue.enqueue(4);
+    queue.enqueue(6);
+    queue.enqueue(8);
+
+    queue.dequeue();
+
+    expect(queue.front.value).toEqual(6);
+  })
   // 5. Can successfully ***peek*** into a queue, seeing the expected value
 
   // 6. Can successfully ***empty*** a queue after multiple ***dequeues***
