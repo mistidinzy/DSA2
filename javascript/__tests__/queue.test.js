@@ -106,5 +106,33 @@ describe('Queue Tests', () => {
 
     queue.dequeue();
     expect(queue.length).toEqual(1);
-  })
+  });
+
+  test('CC10-Q.09: Can clear current queue.', () => {
+    let queue = new Queue();
+
+    queue.enqueue(5);
+    queue.enqueue(4);
+    queue.enqueue(6);
+    queue.enqueue(8);
+    queue.enqueue(5);
+
+    queue.clear();
+
+    expect(queue.front).toBeNull();
+    expect(queue.back).toBeNull();
+    expect(queue.length).toEqual(0);
+
+    queue.enqueue(8);
+
+    expect(queue.front.value).toEqual(8);
+  });
+
+  test('CC10-Q.10: isEmpty returns TRUE if queue IS empty.', () => {
+
+  });
+
+  test('CC10-Q.11: isEmpty returns FALSE if queue is NOT empty.', () => {
+
+  });
 })

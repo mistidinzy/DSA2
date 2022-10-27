@@ -13,6 +13,14 @@ class Queue {
     return this.front.value;
   }
 
+  isEmpty() {
+    if (!this.front) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   enqueue(value) {
     let newNode = new Node(value);
 
@@ -47,6 +55,12 @@ class Queue {
         this.dequeue();
       }
     }
+  }
+
+  clear() {
+    this.front = null;
+    this.back = null;
+    this.length = 0;
   }
 }
 
