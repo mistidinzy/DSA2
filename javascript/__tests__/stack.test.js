@@ -97,5 +97,15 @@ describe('Stack Tests', () => {
     expect(stack.toString()).toEqual('T -> 1| 2| 3| -> N');
   });
 
+  test('CC10-S.10: Creates a stack from an array, in SAME index order as array (top = i @ 0).', () => {
+    let stack = new Stack().fromArray([1,2,3,4,5]);
+    expect(stack.toString()).toEqual('T -> 1| 2| 3| 4| 5| -> N');
+  });
+
+  test('CC10-S.11: Creates a stack from an array, in REVERSE index order as array (top = i @ end).', () => {
+    let stack = new Stack().reverseFromArray([1,2,3,4,5]);
+    expect(stack.toString()).toEqual('T -> 5| 4| 3| 2| 1| -> N');
+  });
+
 
 })
