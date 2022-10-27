@@ -107,5 +107,13 @@ describe('Stack Tests', () => {
     expect(stack.toString()).toEqual('T -> 5| 4| 3| 2| 1| -> N');
   });
 
+  test('CC10-S.12: Correctly updates/returns size of stack.', () => {
+    let stack = new Stack().fromArray([1,2,3,4,5]);
+    expect(stack.count).toEqual(5);
+    stack.push(3);
+    expect(stack.count).toEqual(6);
+    stack.pop();
+    expect(stack.count).toEqual(5);
+  });
 
 })
