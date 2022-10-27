@@ -53,6 +53,14 @@ class Stack {
     }
   }
 
+  peek(){
+    if(!this.top){
+      throw new Error('There is nothing here!');
+    }else{
+      return(this.top.value);
+    }
+  }
+
   toString() {
     let tp = 'T -> ';
     let str = '';
