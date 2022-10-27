@@ -1,6 +1,6 @@
 'use strict';
 
-// let Node = require('../linked-list/node');
+let Node = require('../linked-list/node');
 
 class Stack {
   constructor(){
