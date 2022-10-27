@@ -116,4 +116,16 @@ describe('Stack Tests', () => {
     expect(stack.count).toEqual(5);
   });
 
+  test('CC10-S.13: Can successfully clear current stack.', () => {
+    let stack = new Stack().fromArray([1,2,3,4,5]);
+    expect(stack.count).toEqual(5);
+    stack.pop();
+    expect(stack.count).toEqual(4);
+    stack.clear();
+    expect(stack.top).toBeNull;
+    expect(stack.count).toEqual(0);
+    stack.push(1);
+    expect(stack.top.value).toEqual(1);
+  });
+
 })
