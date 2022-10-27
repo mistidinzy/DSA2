@@ -52,6 +52,18 @@ class Stack {
       }
     }
   }
+
+  toString() {
+    let tp = 'T -> ';
+    let str = '';
+    let current = this.top;
+    while (current != null) {
+      str += `${current.value}| `;
+      current = current.next;
+    }
+    let strung = (tp += str += '-> N');
+    return strung;
+  }
 }
 
 module.exports = Stack;

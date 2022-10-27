@@ -48,9 +48,10 @@ describe('Stack Tests', () => {
    // 5. Can successfully ***empty*** a stack after multiple ***pops***
    test('CC10-S.05: Can empty a stack after multiple pops.', () => {
     let stack = new Stack().fromArray([5,4,3,2,1]);
+
     stack.popUntilEmpty();
+    
     let result = stack.toString();
-    console.log(result);
 
     expect(result).toEqual('T -> -> N');
     expect(stack.top).toBeNull();
