@@ -89,5 +89,13 @@ describe('Stack Tests', () => {
     expect(result2).toBeTruthy();
   });
 
+  test('CC10-S.09: Returns Stack as a string.', () => {
+    let stack = new Stack();
+    stack.push(3);
+    stack.push(2);
+    stack.push(1);
+    expect(stack.toString()).toEqual('T -> 1| 2| 3| -> N');
+  });
+
 
 })
