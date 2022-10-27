@@ -8,6 +8,22 @@ class Stack {
     this.count = 0;
   }
 
+  fromArray(arr) {
+    let stack = new Stack();
+    for (let i = arr.length - 1; i >= 0; i--) {
+      stack.push(arr[i]);
+    }
+    return stack;
+  }
+
+  reverseFromArray(arr) {
+    let stack = new Stack();
+    for (let i = 0; i < arr.length; i++) {
+      stack.push(arr[i]);
+    }
+    return stack;
+  }
+
   push(value) {
     let newNode = new Node(value);
     newNode.next = this.top;
