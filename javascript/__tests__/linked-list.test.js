@@ -213,7 +213,6 @@ describe('LinkedList Tests', () => {
   });
 
   // 4. Where the linked list is of a size 1.
-
   test('CC07-04: Where the size of linked list is 1.', () => {
     let list = new LinkedList().fromArray([2]);
 
@@ -238,7 +237,6 @@ describe('LinkedList Tests', () => {
 
   // Can create a linked list from an array, in same index order.
   test('2. Can create a LinkedList from an array, in SAME index order.', () => {
-    let arr = [6, 7, 8, 9];
     let list = new LinkedList().fromArray([6, 7, 8, 9]);
 
     expect(list.head.value).toEqual(6);
