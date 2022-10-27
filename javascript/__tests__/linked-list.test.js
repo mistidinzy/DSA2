@@ -10,7 +10,7 @@ describe('Node Test', () => {
   });
 });
 
-let LinkedList = require('../linked-list/index');
+let LinkedList = require('../linked-list/linked-list');
 
 describe('LinkedList Tests', () => {
   //----- CREATING A LINKED LIST -----//
