@@ -61,6 +61,11 @@ class Stack {
     }
   }
 
+  clear(){
+    this.top = null;
+    this.count = 0;
+  }
+
   toString() {
     let tp = 'T -> ';
     let str = '';

@@ -50,13 +50,24 @@ describe('Stack Tests', () => {
     let stack = new Stack().fromArray([5,4,3,2,1]);
 
     stack.popUntilEmpty();
-    
+
     let result = stack.toString();
 
     expect(result).toEqual('T -> -> N');
     expect(stack.top).toBeNull();
 
     expect(() => {stack.popUntilEmpty()}).toThrow(Error);
+  });
+
+  // 6. Can successfully ***peek*** at the top of the stack.
+  test('CC10-S.06: Peek returns value at top of the stack.', () => {
+    let stack = new Stack().fromArray([0,9,8,7,6]);
+    let result = stack.peek();
+    expect(result).toEqual(stack.top.value);
+    expect(result).toEqual(0);
+
+    stack.clear();
+    expect(() => {stack.peek()}).toThrow(Error);
   });
 
 
