@@ -23,4 +23,25 @@ describe('Queue Tests', () => {
     expect(queue.back.value).toEqual(3);
     expect(queue.front.value).toEqual(1);
   });
+
+  // 3. Can successfully ***enqueue multiple*** values into a queue
+  test('CC10-Q.03: Can enqueue multiple values.', () => {
+    let queue = new Queue();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    expect(queue.front.value).toEqual(1);
+    expect(queue.back.value).toEqual(3);
+  })
+
+  // 4. Can successfully ***dequeue*** value out of a queue
+
+  // 5. Can successfully ***peek*** into a queue, seeing the expected value
+
+  // 6. Can successfully ***empty*** a queue after multiple ***dequeues***
+
+  // 7. Calling dequeue or peek on empty queue raises ***exception***
+
+  //-----ADDITIONAL TESTS-----//
 })
