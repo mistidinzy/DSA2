@@ -2,41 +2,52 @@
 
 let Node = require('../linked-list/node');
 
-class Queue{
-  constructor(){
+class Queue {
+  constructor() {
     this.front = null;
     this.back = null;
     this.length = 0;
   }
 
-  peek(){
+  peek() {
     return this.front.value;
   }
 
-  enqueue(value){
+  enqueue(value) {
     let newNode = new Node(value);
 
-    if(this.front){
+    if (this.front) {
       this.back.next = newNode;
-    }else{
+    } else {
       this.front = newNode;
     }
     this.back = newNode;
     this.length = this.length + 1;
   }
 
-  dequeue(){
-    let temp = this.front;
-    this.front = this.front.next;
-    temp.next = null;
+  dequeue() {
+    if (!this.front) {
+      throw new Error('Queue is already empty!');
+    } else {
+      let temp = this.front;
+      this.front = this.front.next;
+      temp.next = null;
 
-    this.length = this.length - 1;
-    return temp;
+      this.length = this.length - 1;
+      return temp;
+    }
   }
 
-  
-
-
+  dequeueUntilEmpty() {
+    if (!this.front) {
+      throw new Error('Queue is already empty!');
+    } else {
+      let count = this.length;
+      for (let i = 0; i < count; i++) {
+        this.dequeue();
+      }
+    }
+  }
 }
 
 module.exports = Queue;

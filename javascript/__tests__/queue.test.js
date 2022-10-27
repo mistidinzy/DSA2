@@ -61,6 +61,20 @@ describe('Queue Tests', () => {
   });
 
   // 6. Can successfully ***empty*** a queue after multiple ***dequeues***
+  test('CC10-Q.06: Can dequeue until empty.', () => {
+    let queue = new Queue();
+
+    queue.enqueue(5);
+    queue.enqueue(4);
+    queue.enqueue(6);
+    queue.enqueue(8);
+    queue.enqueue(5);
+
+    queue.dequeueUntilEmpty();
+
+    expect(queue.front).toBeNull();
+    expect(queue.length).toEqual(0);
+  })
 
   // 7. Calling dequeue or peek on empty queue raises ***exception***
 
@@ -80,7 +94,7 @@ describe('Queue Tests', () => {
 
     queue.dequeue();
     expect(queue.length).toEqual(2);
-    
+
     queue.dequeue();
     expect(queue.length).toEqual(1);
   })
