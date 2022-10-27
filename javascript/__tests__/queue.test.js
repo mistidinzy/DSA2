@@ -74,9 +74,18 @@ describe('Queue Tests', () => {
 
     expect(queue.front).toBeNull();
     expect(queue.length).toEqual(0);
-  })
+  });
 
   // 7. Calling dequeue or peek on empty queue raises ***exception***
+  test('CC10-Q.07: Calling dequeue or peek on empty queue throws error.', () => {
+    let queue = new Queue();
+
+    expect(() => {queue.peek()}).toThrow(Error);
+
+    expect(() => {queue.dequeue()}).toThrow(Error);
+
+    expect(() => {queue.dequeueUntilEmpty()}).toThrow(Error);
+  });
 
   //-----ADDITIONAL TESTS-----//
 
