@@ -6,6 +6,9 @@ class PseudoQueue{
   constructor(){
     this.inStack = new Stack();
     this.outStack = new Stack();
+
+    this.top = this.inStack.top;
+    this.back = this.outStack.back;
   }
 
   enqueue(value){
