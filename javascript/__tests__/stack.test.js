@@ -131,12 +131,12 @@ describe('Stack Tests', () => {
 
   test('CC10-S.15: Can get last value in stack.', () => {
     let stack = new Stack().fromArray([1,2,3,4,5]);
-    console.log(stack.toString());
-
     let result = stack.getLast();
-
-    console.log(stack.toString());
-    console.log(result);
+    expect(result).toEqual(5);
   });
 
+  test('CC10-S.16: GetLast on empty stack throws error', () => {
+    let stack = new Stack();
+    expect(() => {stack.getLast()}).toThrow(Error);
+  })
 })

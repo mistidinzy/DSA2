@@ -3,7 +3,7 @@
 let Node = require('../linked-list/node');
 
 class Stack {
-  constructor(){
+  constructor() {
     this.top = null;
     this.count = 0;
   }
@@ -12,14 +12,16 @@ class Stack {
     let stack = new Stack();
     for (let i = arr.length - 1; i >= 0; i--) {
       stack.push(arr[i]);
-    } return stack;
+    }
+    return stack;
   }
 
   reverseFromArray(arr) {
     let stack = new Stack();
     for (let i = 0; i < arr.length; i++) {
       stack.push(arr[i]);
-    } return stack;
+    }
+    return stack;
   }
 
   push(value) {
@@ -29,11 +31,11 @@ class Stack {
     this.count++;
   }
 
-  peek(){
-    if(!this.top){
+  peek() {
+    if (!this.top) {
       throw new Error('There is nothing here!');
     } else {
-      return(this.top.value);
+      return this.top.value;
     }
   }
 
@@ -48,26 +50,28 @@ class Stack {
     }
   }
 
-  popUntilEmpty(){
-    if(!this.top){
+  popUntilEmpty() {
+    if (!this.top) {
       throw new Error('Stack is already empty!');
-    }else {
+    } else {
       let length = this.count;
-      for(let i = 0; i < length; i++){
+      for (let i = 0; i < length; i++) {
         this.pop();
       }
     }
   }
 
-  clear(){
+  clear() {
     this.top = null;
     this.count = 0;
   }
 
-  isEmpty(){
-    if(!this.top){
+  isEmpty() {
+    if (!this.top) {
       return true;
-    }else{return false};
+    } else {
+      return false;
+    }
   }
 
   toString() {
@@ -82,14 +86,23 @@ class Stack {
     return strung;
   }
 
-  getLast(){
-    if(!this.top)
-    {
+  stackToArray(){
+    let arr = [];
+    let length = this.count;
+
+    for (let i = 0; i < length; i++){
+      arr.push([i]);
+    }
+    return arr;
+  }
+  
+  getLast() {
+    if (!this.top) {
       throw new Error('This stack is empty!');
     } else {
       let length = this.count;
-      for(let i = 0; i < length - 1; i++)
-      {
+
+      for (let i = 0; i < length - 1; i++) {
         this.pop();
       }
       return this.top.value;

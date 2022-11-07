@@ -16,6 +16,6 @@ describe('Pseudo Queue Tests', () => {
     let pQ = new PseudoQueue();
     pQ.enqueue(2);
 
-    console.log(pq.top.value);
+    expect(pQ.inStack.top.value).toEqual(2);
   })
 });
