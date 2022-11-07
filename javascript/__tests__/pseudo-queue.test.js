@@ -15,7 +15,14 @@ describe('Pseudo Queue Tests', () => {
   test('CC11-02: PseudoQueue can "enqueue" a value', () => {
     let pQ = new PseudoQueue();
     pQ.enqueue(2);
-
     expect(pQ.inStack.top.value).toEqual(2);
-  })
+  });
+
+  test('CC11-03: "dequeue" on empty PseudoQueue will throw error.', () => {
+    let pseudoQ = new PseudoQueue();
+
+    expect(() => {pseudoQ.dequeue()}).toThrow(Error);
+  });
+
+
 });
