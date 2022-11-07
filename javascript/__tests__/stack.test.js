@@ -135,8 +135,9 @@ describe('Stack Tests', () => {
     expect(result).toEqual(5);
   });
 
-  test('CC10-S.16: GetLast on empty stack throws error', () => {
+  test('CC10-S.16: GetLast on empty stack throws error.', () => {
     let stack = new Stack();
     expect(() => {stack.getLast()}).toThrow(Error);
-  })
+  });
+
 })

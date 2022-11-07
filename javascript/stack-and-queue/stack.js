@@ -86,16 +86,6 @@ class Stack {
     return strung;
   }
 
-  stackToArray(){
-    let arr = [];
-    let length = this.count;
-
-    for (let i = 0; i < length; i++){
-      arr.push([i]);
-    }
-    return arr;
-  }
-  
   getLast() {
     if (!this.top) {
       throw new Error('This stack is empty!');
