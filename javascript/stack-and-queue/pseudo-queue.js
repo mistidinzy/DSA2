@@ -1,28 +1,26 @@
-'use strict';
+"use strict";
 
 const Stack = require("./stack");
 
-class PseudoQueue{
-  constructor(){
-    this.inStack = new Stack();
-    this.outStack = new Stack();
-
-    this.top = this.inStack.top;
-    this.back = this.outStack.back;
+class PseudoQueue {
+  constructor() {
+    this.inbox = new Stack();
+    this.outbox = new Stack();
   }
 
-  enqueue(value){
-    this.inStack.push(value);
+  enqueue(value) {
+    this.inbox.push(value);
   }
 
-  dequeue(){
-    if(this.inStack.isEmpty){
-      throw new Error('The queue is already empty!');
-    }else{
-      let p = this.inStack.pop();
-      this.outStack.push(p);
+  dequeue() {
+    if (this.inbox.isEmpty() && this.outbox.isEmpty()) {
+      throw new Error("The queue is already empty!");
+    } else {
+      while (!this.inbox.isEmpty()) {
+        this.outbox.push(this.inbox.pop());
+      }
     }
-    return this.outStack.push(p);
+    this.outbox.pop();
   }
 }
 

@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-let Node = require('../linked-list/node');
+let Node = require("../linked-list/node");
 
 class Stack {
   constructor() {
@@ -33,7 +33,7 @@ class Stack {
 
   peek() {
     if (!this.top) {
-      throw new Error('There is nothing here!');
+      throw new Error("There is nothing here!");
     } else {
       return this.top.value;
     }
@@ -41,7 +41,7 @@ class Stack {
 
   pop() {
     if (!this.top) {
-      throw new Error('Stack is already empty!');
+      throw new Error("Stack is already empty!");
     } else {
       let popped = this.top.value;
       this.top = this.top.next;
@@ -52,7 +52,7 @@ class Stack {
 
   popUntilEmpty() {
     if (!this.top) {
-      throw new Error('Stack is already empty!');
+      throw new Error("Stack is already empty!");
     } else {
       let length = this.count;
       for (let i = 0; i < length; i++) {
@@ -75,14 +75,14 @@ class Stack {
   }
 
   toString() {
-    let tp = 'T -> ';
-    let str = '';
+    let tp = "T -> ";
+    let str = "";
     let current = this.top;
     while (current != null) {
       str += `${current.value}| `;
       current = current.next;
     }
-    let strung = (tp += str += '-> N');
+    let strung = (tp += str += "-> N");
     return strung;
   }
 
