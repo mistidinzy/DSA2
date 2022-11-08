@@ -20,7 +20,7 @@ class PseudoQueue {
         this.outbox.push(this.inbox.pop());
       }
     }
-    this.outbox.pop();
+    return this.outbox.pop();
   }
 }
 

@@ -32,11 +32,8 @@ describe("Pseudo Queue Tests", () => {
     pseudoQ.enqueue(2);
     pseudoQ.enqueue(3);
 
-    console.log(pseudoQ);
-
     let result = pseudoQ.dequeue();
 
-    console.log(pseudoQ);
-    console.log(result);
+    expect(result).toEqual(1);
   });
 });
