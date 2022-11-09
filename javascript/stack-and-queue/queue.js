@@ -62,6 +62,24 @@ class Queue {
     this.back = null;
     this.length = 0;
   }
+
+  qToString(){
+    let bk = "NULL <- (BACK)";
+    let fr = "(FRONT)";
+    let arr = [];
+    let current = this.front;
+
+    for(let i = 0; i < this.length; i++){
+      arr.push(current.value);
+      current = current.next;
+    }
+
+    arr.reverse();
+    let strung = arr.join(' <- ');
+
+    let final = `${bk} ${strung} ${fr}`;
+    return final;
+  }
 }
 
 module.exports = Queue;
