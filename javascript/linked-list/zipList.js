@@ -4,30 +4,30 @@ let LinkedList = require('./linked-list');
 
 const zipLists = (list1, list2) =>
 {
-  let currentA = list1.head;
-  let currentB = list2.head;
+  let pointerA = list1.head;
+  let pointerB = list2.head;
 
   let list3 = new LinkedList();
 
-  list3.head = currentA || currentB;
-  
-  let temp;
+  list3.head = pointerA || pointerB;
 
-  while(currentA && currentB)
+  let pointerMover;
+
+  while(pointerA && pointerB)
   {
-    if(currentA){
-      temp = currentA.next;
-      if(currentB){
-        currentA.next = currentB;
-        currentA = temp;
+    if(pointerA){
+      pointerMover = pointerA.next;
+      if(pointerB){
+        pointerA.next = pointerB;
+        pointerA = pointerMover;
       }
     }
 
-    if(currentB){
-      temp = currentB.next;
-      if(currentA){
-        currentB.next = currentA;
-        currentB = temp;
+    if(pointerB){
+      pointerMover = pointerB.next;
+      if(pointerA){
+        pointerB.next = pointerA;
+        pointerB = pointerMover;
       }
     }
   }
