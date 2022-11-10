@@ -8,6 +8,8 @@
 
 ### *Skip to:*
 
+> ## [The Code](linked-list.js)
+>
 >## [Implementation](#1️⃣-implementation)
 >
 > ## [Insertions](#2️⃣-insertions)
@@ -164,6 +166,12 @@ Implement a method that finds the node at the middle of the Linked List.
 ## 4️⃣ Linked List Zip
 
 > Zip two linked lists together.
+
+---
+
+## [zipList code](zipList.js)
+
+---
 
 ### Features:
 
