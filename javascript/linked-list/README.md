@@ -156,12 +156,24 @@ Implement a method that finds the node at the middle of the Linked List.
 
 - `zipLists`
   - Arguments: 2 linked lists.
-  - Return: One new linked list, zipped as noted.
+  - Returns: One new linked list, zipped as noted.
   - Zip the two linked lists together, so that the nodes alternate between the two lists, and return a reference to the zipped list.
 
 ---
 
+### Example
+
+| list 1 | list 2 | output |
+| --- | --- | --- |
+| (**1**) -> (**3**) -> (**5**) -> (**null**) | (**2**) -> (**4** )-> (**null**) | (**1**) -> (**2**) -> (**3**) -> (**4**) -> (**5**) -> (**null**) |
+
+---
+
 ### Testing - `zipLists`
+
+1. “Happy Path” - Expected outcome
+2. Expected failure
+3. Edge Case (if applicable/obvious)
 
 ---
 

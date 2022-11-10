@@ -188,7 +188,6 @@ describe('LinkedList Tests', () => {
     expect(list.occurrences(3)).toEqual(0);
   });
 
-
   //----- kthFromEnd -----//
 
   // 1. Where `k` is greater than the length of the linked list.
