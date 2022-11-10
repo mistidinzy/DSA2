@@ -6,11 +6,14 @@ const zipLists = (list1, list2) =>
 {
   let currentA = list1.head;
   let currentB = list2.head;
+
   let list3 = new LinkedList();
+
   list3.head = currentA || currentB;
+  
   let temp;
 
-  while(currentA.next != null && currentB.next != null)
+  while(currentA && currentB)
   {
     if(currentA){
       temp = currentA.next;
