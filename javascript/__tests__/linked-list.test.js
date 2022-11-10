@@ -275,13 +275,7 @@ describe('LinkedList Tests', () => {
 
   test('6. Can reverse a linked list.', () => {
     let list = new LinkedList().fromArray([5,4,3,2,1]);
-
-    console.log(list.toString());
-
     list.reverse();
-
-    console.log(list.toString());
-
     expect(list.toString()).toEqual('{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> NULL');
   })
 });
