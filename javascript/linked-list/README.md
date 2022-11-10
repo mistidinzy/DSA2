@@ -4,7 +4,9 @@
 
 ---
 
-| Resources |
+## Resources
+
+|  |
 |---|
 | [Canvas: Read 05](https://bit.ly/3fjKS0L) |
 | [CF: Linked Lists](https://bit.ly/3dDE2CR) |
@@ -182,3 +184,41 @@ Implement a method that finds the node at the middle of the Linked List.
 > Implement another function that merges two sorted linked lists into a single sorted linked list.
 
 ---
+
+## **Whiteboard Challenges**
+
+### *Layout Example:*
+
+![Whiteboard Layout Example](https://bit.ly/3WNBL9V)
+
+---
+
+## 5️⃣ Linked List - Reverse
+
+> Given a linked list, write a function that returns the list with all values in reverse order.
+
+---
+
+### Example
+
+| Given List | Output |
+| --- | --- |
+| (**1**) -> (**2**) -> (**3**) -> (**null**) | (**3**) -> (**2**) -> (**1**) -> (**null**) |
+
+---
+
+## 6️⃣ Linked List - Palindrome
+
+> Validate whether or not a Linked List is palindrome.
+
+---
+
+### Example
+
+| Given List | Output |
+|--- | --- |
+| **head** -> {**T**} -> {**A**} -> {**C**} -> {**O**} -> {**C**} -> {**A**} -> {**T**} | **TRUE**
+
+---
+
+### [Back to Top](#resources)
