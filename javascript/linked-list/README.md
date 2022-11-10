@@ -1,22 +1,35 @@
 # Data Structures - Linked Lists
 
-> 🏡 **[**Home**](../../README.md)**
+<a id="top"></a>
+
+> ## 🏡 **[**Home**](../../README.md)**
 
 ---
 
-| Resources |
-|---|
-| [Canvas: Read 05](https://bit.ly/3fjKS0L) |
-| [CF: Linked Lists](https://bit.ly/3dDE2CR) |
-| [Unit Tests](https://bit.ly/3RinlKV) |
-| [Testing Workflow](https://bit.ly/3y2KAln) |
-| [Documentation](https://bit.ly/3ULbwjj) |
-| [Big O: Analysis of Algorithm Efficiency](https://bit.ly/3DSWKkz) |
-| [@trekhleb: "javascript-algorithms"](https://bit.ly/3DTTKEA) |
-| [Implement LinkedList with TDD](https://bit.ly/3dL3Sow) |
-| [Data Structures in Javascript: Singly Linked Lists](https://bit.ly/3frnWN8) |
-| [Geeks for Geeks: Linked Lists](https://bit.ly/3rhZjFu) |
-| [Javascript in Plain English: Linked Lists](https://bit.ly/3SHnRDn) |
+### *Skip to:*
+
+>## [Implementation](#1️⃣-implementation)
+>
+> ## [Insertions](#2️⃣-insertions)
+>
+> ## [Kth](#3️⃣-kth-from-end)
+>
+> ## [Zip](#4️⃣-linked-list-zip)
+>
+> ## [Reverse](#5️⃣-reverse)
+>
+> ## [Palindrome](#6️⃣-palindrome)
+
+---
+
+### Resources
+
+- [Canvas: Read 05](https://bit.ly/3fjKS0L)
+- [CF: Linked Lists](https://bit.ly/3dDE2CR)
+- [Implement LinkedList with TDD](https://bit.ly/3dL3Sow)
+- [Data Structures in Javascript: Singly Linked Lists](https://bit.ly/3frnWN8)
+- [Geeks for Geeks: Linked Lists](https://bit.ly/3rhZjFu)
+- [Javascript in Plain English: Linked Lists](https://bit.ly/3SHnRDn)
 
 ---
 
@@ -182,3 +195,41 @@ Implement a method that finds the node at the middle of the Linked List.
 > Implement another function that merges two sorted linked lists into a single sorted linked list.
 
 ---
+
+## **Whiteboard Challenges**
+
+### *Layout Example:*
+
+![Whiteboard Layout Example](https://bit.ly/3WNBL9V)
+
+---
+
+## 5️⃣ Reverse
+
+> Given a linked list, write a function that returns the list with all values in reverse order.
+
+---
+
+### Example
+
+| Given List | Output |
+| --- | --- |
+| (**1**) -> (**2**) -> (**3**) -> (**null**) | (**3**) -> (**2**) -> (**1**) -> (**null**) |
+
+---
+
+## 6️⃣ Palindrome
+
+> Validate whether or not a Linked List is palindrome.
+
+---
+
+### Example
+
+| Given List | Output |
+|--- | --- |
+| **head** -> {**T**} -> {**A**} -> {**C**} -> {**O**} -> {**C**} -> {**A**} -> {**T**} | **TRUE**
+
+---
+
+### [Back to Top](#top)
