@@ -193,7 +193,6 @@ describe('LinkedList Tests', () => {
   // 1. Where `k` is greater than the length of the linked list.
   test('CC07-01: Throws an error when k is greater than length of list.', () => {
     let list = new LinkedList().fromArray([2,4,6,8]);
-
     expect(() => {list.kthFromEnd(17)}).toThrow('Given value is larger than list!');
     expect(() => {list.kthFromEnd(34)}).toThrow(Error);
   });
@@ -207,7 +206,6 @@ describe('LinkedList Tests', () => {
   // 3. Where `k` is not a positive integer.
   test('CC07-03: Where k is not a positive integer.', () => {
     let list = new LinkedList().fromArray([8,6,4,2,12,78,3]);
-
     expect(() => {list.kthFromEnd(-4)}).toThrow(Error);
   });
 
@@ -246,7 +244,6 @@ describe('LinkedList Tests', () => {
 
   // Can create a linked list from an array, in reverse index order.
   test('3. Can create a LinkedList from an array, in REVERSE index order.', () => {
-    let arr = [5, 4, 3, 2, 1];
     let list = new LinkedList().reverseFromArray([5, 4, 3, 2, 1]);
 
     expect(list.head.value).toEqual(1);
