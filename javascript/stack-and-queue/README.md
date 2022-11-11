@@ -1,6 +1,16 @@
 # Data Structures - Stacks & Queues
 
-> 🏡 **[**Home**](../../README.md)**
+> ## 🏡 **[**Home**](../../README.md)**
+
+---
+
+### Skip to:
+
+> ### [Implementation](#1-implementation)
+>
+> ### [PseudoQueue](#2-pseudoqueue)
+>
+> ### [First In, First Out - Animal Shelter](#3-first-in-first-out-animal-shelter)
 
 ---
 
@@ -113,10 +123,6 @@ You have access to the `Node` class and all the properties on the `LinkedList` c
 
 ## 2. PseudoQueue
 
-> 🏡 **[**Home**](../../README.md)**
-
----
-
 > Branch Name: `stack-queue-pseudo`
 >
 > Challenge Type: `Code Challenge / Algorithm`
@@ -154,3 +160,5 @@ For each method that you define, write test assertions for the following conditi
 - Edge Case (if applicable/obvious)
 
 ---
+
+## 3. "First In, First Out" Animal Shelter
