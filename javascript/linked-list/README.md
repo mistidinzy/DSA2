@@ -8,19 +8,19 @@
 
 ### *Skip to:*
 
-> ## [The Code](linked-list.js)
+> ### [The Code](linked-list.js)
 >
->## [Implementation](#1️⃣-implementation)
+> ### [Implementation](#1️⃣-implementation)
 >
-> ## [Insertions](#2️⃣-insertions)
+> ### [Insertions](#2️⃣-insertions)
 >
-> ## [Kth](#3️⃣-kth-from-end)
+> ### [Kth](#3️⃣-kth-from-end)
 >
-> ## [Zip](#4️⃣-linked-list-zip)
+> ### [Zip](#4️⃣-linked-list-zip)
 >
-> ## [Reverse](#5️⃣-reverse)
+> ### [Reverse](#5️⃣-reverse)
 >
-> ## [Palindrome](#6️⃣-palindrome)
+> ### [Palindrome](#6️⃣-palindrome)
 
 ---
 
