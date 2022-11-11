@@ -274,5 +274,32 @@ describe('LinkedList Tests', () => {
     let list = new LinkedList().fromArray([5,4,3,2,1]);
     list.reverse();
     expect(list.toString()).toEqual('{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> NULL');
+  });
+
+  //---- Palindrome ----- //
+
+  test('Can convert a linked list to a stack. Reverses the linked list.', () => {
+    let list = new LinkedList().fromArray([2,4,6,8]);
+
+    let stacked = list.toStack();
+
+    let strung = stacked.toString();
+
+    expect(strung).toEqual('T -> 8| 6| 4| 2| -> N');
+
+  });
+
+  test('7. Can check whether or not the linked list is a palindrome.', () => {
+    let list = new LinkedList().fromArray([1,2,2,2,1]);
+
+    let result = list.isPalindrome();
+
+    console.log(result);
+
+    let list2 = new LinkedList().fromArray([1,2,3,4,5]);
+
+    let result2 = list2.isPalindrome();
+
+    console.log(result2);
   })
 });

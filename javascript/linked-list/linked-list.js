@@ -264,10 +264,35 @@ class LinkedList {
     }
   }
 
-  isPalindrome(){
-    let stk = new Stack();
+  toStack(){
+    let stack = new Stack();
 
+    let current = this.head;
+
+    while(current){
+      stack.push(current.value);
+      current = current.next;
+    }
+
+    return stack;
+  }
+
+  isPalindrome(){
+    let stack = this.toStack();
+    console.log(stack.toString());
     
+    let current = this.head;
+    let track = null;
+
+    while(current != null)
+    {
+      if(current.value == stack.pop())
+      {
+        track = true;
+        current = current.next;
+      } else { track = false; break; }
+      return track;
+    }
   }
 }
 
