@@ -278,28 +278,29 @@ describe('LinkedList Tests', () => {
 
   //---- Palindrome ----- //
 
-  test('Can convert a linked list to a stack. Reverses the linked list.', () => {
+  test('7. Can convert a linked list to a stack. Reverses the linked list.', () => {
     let list = new LinkedList().fromArray([2,4,6,8]);
-
     let stacked = list.toStack();
-
     let strung = stacked.toString();
-
     expect(strung).toEqual('T -> 8| 6| 4| 2| -> N');
-
   });
 
-  test('7. Can check whether or not the linked list is a palindrome.', () => {
-    let list = new LinkedList().fromArray([1,2,2,2,1]);
+  test('8. Can check whether or not the linked list is a palindrome.', () => {
+    let list1 = new LinkedList().fromArray(['T','A','C','O']);
+    let list2 = new LinkedList().fromArray(['T','A','C','O','C','A','T']);
+    let list3 = new LinkedList().fromArray([1,2,3,4,5]);
+    let list4 = new LinkedList().fromArray([3,4,4,3]);
 
-    let result = list.isPalindrome();
+    let pal1 = list1.isPalindrome();
+    expect(pal1).toBeFalsy();
 
-    console.log(result);
+    let pal2 = list2.isPalindrome();
+    expect(pal2).toBeTruthy();
 
-    let list2 = new LinkedList().fromArray([1,2,3,4,5]);
+    let pal3 = list3.isPalindrome();
+    expect(pal3).toBeFalsy();
 
-    let result2 = list2.isPalindrome();
-
-    console.log(result2);
-  })
+    let pal4 = list4.isPalindrome();
+    expect(pal4).toBeTruthy();
+  });
 });
