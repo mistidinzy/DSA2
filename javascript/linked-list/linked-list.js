@@ -1,6 +1,7 @@
 'use strict';
 
-let Node = require('./node')
+let Node = require('./node');
+let Stack = require('../stack-and-queue/stack');
 
 class LinkedList {
   constructor() {
@@ -253,6 +254,20 @@ class LinkedList {
       current = next;
     }
     this.head = prev;
+  }
+
+  traverse(){
+    let current = this.head;
+
+    while(current){
+      current = current.next;
+    }
+  }
+
+  isPalindrome(){
+    let stk = new Stack();
+
+    
   }
 }
 
