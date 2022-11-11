@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-let Node = require("./node");
-let Stack = require("../stack-and-queue/stack");
+let Node = require('./node');
+let Stack = require('../stack-and-queue/stack');
 
 class LinkedList {
   constructor() {
@@ -77,13 +77,13 @@ class LinkedList {
 
   //Returns list values as a string.
   toString() {
-    let str = "";
+    let str = '';
     let current = this.head;
     while (current !== null) {
       str += `{ ${current.value} } -> `;
       current = current.next;
     }
-    str += "NULL";
+    str += 'NULL';
     return str;
   }
 
@@ -129,7 +129,7 @@ class LinkedList {
   //Finds the first occurence of a given value, and adds the new value immediately BEFORE it.
   insertBefore(value, newValue) {
     if (!this.head) {
-      throw new Error("Linked List is Empty!");
+      throw new Error('Linked List is Empty!');
     }
 
     if (this.head.value === value) {
@@ -156,7 +156,7 @@ class LinkedList {
   //Finds the first occurence of a given value, and adds the new value immediately AFTER it.
   insertAfter(value, newValue) {
     if (!this.head) {
-      throw new Error("Linked List is empty!");
+      throw new Error('Linked List is empty!');
     }
 
     let current = this.head;
@@ -173,7 +173,7 @@ class LinkedList {
 
   findMiddle() {
     if (!this.head) {
-      return new Error("Linked List is empty!");
+      return new Error('Linked List is empty!');
     } else {
       let slowPointer = this.head;
       let fastPointer = this.head;
@@ -189,7 +189,7 @@ class LinkedList {
   //Returns the value of the last node in the list.
   getLast() {
     if (!this.head) {
-      throw new Error("Linked List is empty!");
+      throw new Error('Linked List is empty!');
     } else {
       let current = this.head;
 
@@ -204,11 +204,11 @@ class LinkedList {
 
   kthFromEnd(k) {
     if (!this.head) {
-      throw new Error("Linked List is empty!");
+      throw new Error('Linked List is empty!');
     }
 
     if (this.size() < k) {
-      throw new Error("Given value is larger than list!");
+      throw new Error('Given value is larger than list!');
     }
 
     if (this.size() === k) {
@@ -216,7 +216,7 @@ class LinkedList {
     }
 
     if (k < 0) {
-      throw new Error("Please provide a positive number!");
+      throw new Error('Please provide a positive number!');
     }
 
     let first = this.head;
