@@ -7,14 +7,17 @@ let Cat = require('../animal-shelter/cat');
 describe("FIFO - Animal Shelter Tests", () => {
   test('01. Can create a new, empty Animal Shelter object.', () => {
     let shelter = new AnimalShelter();
+
     let dogs = shelter.dogs.qToString();
     let cats = shelter.cats.qToString();
 
-    console.log(dogs, cats);
-  });
-
-  test('02. Can add a Dog to the Animal Shelter.', () => {
+    expect(dogs).toEqual('This queue is empty.');
+    expect(cats).toEqual('This queue is empty.');
 
   });
+
+  // test('02. Can add a Dog to the Animal Shelter.', () => {
+
+  // });
 
 });
