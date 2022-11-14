@@ -1,8 +1,8 @@
 "use strict";
 
 class Dog {
-  constructor() {
-    this.nickname = "";
+  constructor(nickname) {
+    this.nickname = nickname;
     this.intake = new Date().toDateString();
     this.status = false;
   }
