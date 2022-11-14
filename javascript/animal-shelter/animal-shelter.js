@@ -1,22 +1,8 @@
 "use strict";
 
 let Queue = require("../stack-and-queue/queue");
-
-class Dog {
-  constructor() {
-    this.nickname = "";
-    this.intake = new Date().toDateString();
-    this.status = false;
-  }
-}
-
-class Cat {
-  constructor() {
-    this.nickname = "";
-    this.intake = new Date().toDateString();
-    this.status = false;
-  }
-}
+let Dog = require('./dog');
+let Cat = require('./cat');
 
 class AnimalShelter {
   constructor() {
@@ -53,14 +39,6 @@ class AnimalShelter {
       this.cats.dequeue();
     } else {
       this.dogs.dequeue();
-    }
-  }
-
-  newName(animal, newName) {
-    if (animal == Dog) {
-      this.nickname = newName;
-    } else if (animal == Cat) {
-      this.nickname = newName;
     }
   }
 }
