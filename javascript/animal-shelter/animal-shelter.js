@@ -43,6 +43,20 @@ class AnimalShelter {
       }
     }
   }
+
+  getAllList() {
+    let kitties = this.cats.qToString();
+    let doggos = this.dogs.qToString();
+    let allList = `All Cats: [ ${kitties} ] All Dogs: [ ${doggos} ]`;
+    return allList;
+  }
+
+  getAllNumbers(){
+    let kitties = this.cats.length;
+    let doggos = this.dogs.length;
+    let total = `Cats: ${kitties}. Dogs: ${doggos}.`;
+    return total;
+  }
 }
 
 module.exports = AnimalShelter;
