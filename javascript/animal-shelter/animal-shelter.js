@@ -1,8 +1,8 @@
 "use strict";
 
 let Queue = require("../stack-and-queue/queue");
-let Dog = require('./dog');
-let Cat = require('./cat');
+let Dog = require("./dog");
+let Cat = require("./cat");
 
 class AnimalShelter {
   constructor() {
@@ -13,32 +13,38 @@ class AnimalShelter {
   enqueue(animal) {
     if (animal == Dog) {
       this.dogs.enqueue(animal);
+      return this.dogs;
     } else if (animal == Cat) {
       this.cats.enqueue(animal);
+      return this.cats;
     }
   }
 
   dequeue(pref) {
     if (pref == Dog) {
       this.dogs.dequeue();
+      return this.dogs;
     } else if (pref == Cat) {
       this.cats.dequeue();
+      return this.cats;
     } else {
-      this.getLongest();
+      return this.getLongest();
     }
   }
 
   getLongest() {
-    let firstCat = this.cats.peek();
-    let firstDog = this.dogs.peek();
+    if (this.cats && this.dogs) {
+      let firstCat = this.cats.peek();
+      let firstDog = this.dogs.peek();
 
-    let firstCatIntake = firstCat.intake;
-    let firstDogIntake = firstDog.intake;
+      let firstCatIntake = firstCat.intake;
+      let firstDogIntake = firstDog.intake;
 
-    if (firstCatIntake >= firstDogIntake) {
-      this.cats.dequeue();
-    } else {
-      this.dogs.dequeue();
+      if (firstCatIntake >= firstDogIntake) {
+        this.cats.dequeue();
+      } else {
+        this.dogs.dequeue();
+      }
     }
   }
 }
