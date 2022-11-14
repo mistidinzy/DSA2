@@ -13,22 +13,18 @@ class AnimalShelter {
   enqueue(animal) {
     if (animal == Dog) {
       this.dogs.enqueue(animal);
-      return this.dogs;
     } else if (animal == Cat) {
       this.cats.enqueue(animal);
-      return this.cats;
     }
   }
 
   dequeue(pref) {
     if (pref == Dog) {
       this.dogs.dequeue();
-      return this.dogs;
     } else if (pref == Cat) {
       this.cats.dequeue();
-      return this.cats;
     } else {
-      return this.getLongest();
+      this.getLongest();
     }
   }
 
