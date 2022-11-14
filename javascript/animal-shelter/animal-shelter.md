@@ -1,6 +1,6 @@
 # 3. FIFO - Animal Shelter
 
-> 🏡 **[**Home**](../../README.md)**
+> 🏡 **[**Home**](../README.md)**
 
 ---
 
