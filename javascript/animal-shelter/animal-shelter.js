@@ -1,21 +1,68 @@
 "use strict";
 
 let Queue = require("../stack-and-queue/queue");
-let Dog = require("./dog");
-let Cat = require("./cat");
+
+class Dog {
+  constructor() {
+    this.nickname = '';
+    this.intake = null;
+    this.status = false;
+    this.species = 'dog';
+  }
+
+  newName(value) {
+    this.nickname = value;
+    return this.nickname;
+   }
+
+   gotFixed(){
+     this.status = true;
+     return this.status;
+   }
+}
+
+class Cat {
+  constructor() {
+    this.nickname = '';
+    this.intake = null;
+    this.status = false;
+    this.species = 'cat';
+  }
+
+  newName(value) {
+   this.nickname = value;
+   return this.nickname;
+  }
+
+  gotFixed(){
+    this.status = true;
+    return this.status;
+  }
+}
 
 class AnimalShelter {
   constructor() {
     this.dogs = new Queue();
     this.cats = new Queue();
+    this.allPets = [];
   }
 
-  enqueue(animal) {
-    if (animal == Dog) {
-      this.dogs.enqueue(animal);
-    } else if (animal == Cat) {
-      this.cats.enqueue(animal);
-    }
+  newDog(name, status){
+    let d = new Dog();
+    d.nickname = name;
+    d.status = status;
+    d.intake = new Date().toDateString();
+    this.allPets.push(d.nickname);
+    return this.dogs.enqueue(d);
+  }
+
+  newCat(name, status){
+    let c = new Cat();
+    c.nickname = name;
+    c.status = status;
+    c.intake = new Date().toDateString();
+    this.allPets.push(c.nickname);
+    return this.cats.enqueue(c);
   }
 
   dequeue(pref) {
@@ -43,20 +90,6 @@ class AnimalShelter {
       }
     }
   }
-
-  getAllList() {
-    let kitties = this.cats.qToString();
-    let doggos = this.dogs.qToString();
-    let allList = `All Cats: [ ${kitties} ] All Dogs: [ ${doggos} ]`;
-    return allList;
-  }
-
-  getAllNumbers(){
-    let kitties = this.cats.length;
-    let doggos = this.dogs.length;
-    let total = `Cats: ${kitties}. Dogs: ${doggos}.`;
-    return total;
-  }
 }
 
-module.exports = AnimalShelter;
+module.exports = AnimalShelter, Dog, Cat;
