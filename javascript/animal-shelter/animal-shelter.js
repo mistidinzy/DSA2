@@ -4,37 +4,37 @@ let Queue = require("../stack-and-queue/queue");
 
 class Dog {
   constructor() {
-    this.nickname = '';
+    this.nickname = "";
     this.intake = null;
     this.status = false;
-    this.species = 'dog';
+    this.species = "dog";
   }
 
   newName(value) {
     this.nickname = value;
     return this.nickname;
-   }
+  }
 
-   gotFixed(){
-     this.status = true;
-     return this.status;
-   }
+  gotFixed() {
+    this.status = true;
+    return this.status;
+  }
 }
 
 class Cat {
   constructor() {
-    this.nickname = '';
+    this.nickname = "";
     this.intake = null;
     this.status = false;
-    this.species = 'cat';
+    this.species = "cat";
   }
 
   newName(value) {
-   this.nickname = value;
-   return this.nickname;
+    this.nickname = value;
+    return this.nickname;
   }
 
-  gotFixed(){
+  gotFixed() {
     this.status = true;
     return this.status;
   }
@@ -47,7 +47,7 @@ class AnimalShelter {
     this.allPets = [];
   }
 
-  newDog(name, status){
+  newDog(name, status) {
     let d = new Dog();
     d.nickname = name;
     d.status = status;
@@ -56,7 +56,7 @@ class AnimalShelter {
     return this.dogs.enqueue(d);
   }
 
-  newCat(name, status){
+  newCat(name, status) {
     let c = new Cat();
     c.nickname = name;
     c.status = status;
@@ -65,14 +65,12 @@ class AnimalShelter {
     return this.cats.enqueue(c);
   }
 
-  dequeue(pref) {
-    if (pref == Dog) {
-      this.dogs.dequeue();
-    } else if (pref == Cat) {
-      this.cats.dequeue();
-    } else {
-      this.getLongest();
-    }
+  getCat() {
+    return this.cats.dequeue();
+  }
+
+  getDog() {
+    return this.dogs.dequeue();
   }
 
   getLongest() {
@@ -88,8 +86,10 @@ class AnimalShelter {
       } else {
         this.dogs.dequeue();
       }
+    } else {
+      throw new Error("No pets available.");
     }
   }
 }
 
-module.exports = AnimalShelter, Dog, Cat;
+(module.exports = AnimalShelter), Dog, Cat;
