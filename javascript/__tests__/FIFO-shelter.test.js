@@ -22,4 +22,18 @@ describe("FIFO - Animal Shelter Tests", () => {
     let arr = shelter.allPets.includes('Fido');
     expect(arr).toBeTruthy();
   });
+
+  test('03. Can add a Cat to the Animal Shelter.', () => {
+    let shelter = new AnimalShelter();
+    shelter.newCat('Mr.Meowgi', false);
+    shelter.newDog('Maya', true);
+    shelter.newCat('Dumbledore', true);
+    shelter.newCat('Reptar', false);
+    shelter.newDog('Riku', true);
+    shelter.newDog('Winky', true);
+
+
+    console.log(shelter.cats);
+
+  });
 });
