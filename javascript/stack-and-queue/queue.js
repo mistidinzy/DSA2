@@ -64,8 +64,8 @@ class Queue {
   }
 
   qToString() {
-    let bk = "NULL <- (BACK)";
-    let fr = "(FRONT)";
+    let bk = "null <- (back)";
+    let fr = "(front)";
     let arr = [];
     let current = this.front;
 
