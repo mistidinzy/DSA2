@@ -139,4 +139,19 @@ describe("Queue Tests", () => {
 
     expect(result).toEqual('null <- (back) 5 <- 4 <- 3 <- 2 <- 1 (front)');
   });
+
+  test('CC10-Q.13: Returns true if queue contains given value. Returns false if not.', () => {
+    let q = new Queue();
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+
+    let result = q.includes(3);
+    expect(result).toBeTruthy();
+
+    let r2 = q.includes(6);
+    expect(r2).toBeFalsy();
+  });
 });

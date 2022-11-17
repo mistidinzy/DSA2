@@ -16,7 +16,7 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newDog('Cheeseball');
     expect(shelter.dogs.front.value.nickname).toEqual('Fido');
     expect(shelter.dogs.front.next.value.nickname).toEqual('Steve');
-    expect(shelter.dogs.front.next.next.value.nickname).toEqual('Cheeseball');
+    expect(shelter.dogs.back.value.nickname).toEqual('Cheeseball');
   });
 
   test('03. Can add a Cat to the Animal Shelter.', () => {
@@ -24,7 +24,7 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newCat('Mr.Meowgi');
     shelter.newCat('Noodle');
     expect(shelter.cats.front.value.nickname).toEqual('Mr.Meowgi');
-    expect(shelter.cats.front.next.value.nickname).toEqual('Noodle');
+    expect(shelter.cats.back.value.nickname).toEqual('Noodle');
   });
 
   test('04. Can dequeue a pet based on preference (Cat).', () => {
@@ -59,6 +59,7 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newCat('Noodle');
     shelter.newDog('Cheeseball');
 
+    
     // console.log(shelter);
     // console.log(shelter.allPets);
   });

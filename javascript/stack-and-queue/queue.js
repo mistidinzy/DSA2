@@ -21,6 +21,17 @@ class Queue {
     }
   }
 
+  includes(value) {
+    let current = this.front;
+    while (current !== null) {
+      if (current.value === value) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
+
   enqueue(value) {
     let newNode = new Node(value);
 
