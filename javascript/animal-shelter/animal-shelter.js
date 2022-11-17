@@ -64,7 +64,8 @@ class AnimalShelter {
     d.nickname = name;
     d.intake = new Date().toDateString();
     this.allPets.push(d);
-    return this.dogs.enqueue(d);
+    this.dogs.enqueue(d);
+    return d;
   }
 
   newCat(name) {
@@ -72,7 +73,8 @@ class AnimalShelter {
     c.nickname = name;
     c.intake = new Date().toDateString();
     this.allPets.push(c);
-    return this.cats.enqueue(c);
+    this.cats.enqueue(c);
+    return c;
   }
 
   getCat() {
@@ -95,23 +97,12 @@ class AnimalShelter {
     }
   }
 
-  getLongest() {
-    if (this.cats && this.dogs) {
-      let firstCat = this.cats.peek();
-      let firstDog = this.dogs.peek();
+  // getLongest() {
 
-      let firstCatIntake = firstCat.intake;
-      let firstDogIntake = firstDog.intake;
 
-      if (firstCatIntake >= firstDogIntake) {
-        this.cats.dequeue();
-      } else {
-        this.dogs.dequeue();
-      }
-    } else {
-      throw new Error("No pets available.");
-    }
-  }
+  //   //!!if number is smaller, then tenure is longer!!//
+
+  // }
 }
 
 module.exports = AnimalShelter, Dog, Cat;
