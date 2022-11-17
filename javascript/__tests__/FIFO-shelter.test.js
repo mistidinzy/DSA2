@@ -49,32 +49,18 @@ describe("FIFO - Animal Shelter Tests", () => {
     expect(result.value.nickname).toEqual('Steve');
     let result2 = shelter.dequeue('dog');
     expect(result2.value.nickname).toEqual('Cheeseball');
+    expect(() => {shelter.dequeue()}).toThrow(Error);
   });
 
   test('06. Can update an intake date.', () => {
     let shelter = new AnimalShelter();
-    shelter.newCat('Mr.Meowgi', false);
-    shelter.newDog('Steve', false);
-    shelter.newCat('Noodle', false);
-    shelter.newDog('Cheeseball', false);
-    let c1 = shelter.allPets[0];
-    let d1 = shelter.allPets[1];
-    let c2 = shelter.allPets[2];
-    let d2 = shelter.allPets[3];
+    shelter.newCat('Mr.Meowgi');
+    shelter.newDog('Steve');
+    shelter.newCat('Noodle');
+    shelter.newDog('Cheeseball');
 
-    console.log(c1.intake, d1.intake, c2.intake, d2.intake);
-
-    c1.changeIntake('01-01-2001');
-    let info = c1.intake;
-    let cT = new Date(info)
-    console.log(cT);
-
-    d1.changeIntake('02-02-2002');
-    let info2 = d1.intake;
-    let dT = new Date(info2);
-    console.log(dT)
-
-    console.log(cT > dT);
+    // console.log(shelter);
+    // console.log(shelter.allPets);
   });
 
   test('07. Dequeue without a preference returns pet with longest tenure.', () => {
@@ -83,5 +69,28 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newDog('Steve');
     shelter.newCat('Noodle');
     shelter.newDog('Cheeseball');
+
+    // console.log(shelter);
+    // console.log(shelter.allPets);
+  });
+
+  test('08. Can add a new Pet class to shelter.', () => {
+    let shelter = new AnimalShelter();
+    shelter.newCat('Mr.Meowgi');
+    shelter.newDog('Steve');
+    shelter.newCat('Noodle');
+    shelter.newDog('Cheeseball');
+
+    console.log(shelter);
+    console.log(shelter.allPets);
+
+    shelter.newPet('Pancake', 'dog');
+
+    console.log(shelter);
+    console.log(shelter.allPets);
+
+    shelter.newPet('Peaches', 'cat');
+    console.log('SHELTER = ', shelter);
+    console.log('ALLPETS = ', shelter.allPets);
   });
 });

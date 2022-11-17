@@ -2,6 +2,29 @@
 
 let Queue = require('../stack-and-queue/queue');
 
+class Pet{
+  constructor(){
+    this.nickname = '';
+    this.intake = new Date().toDateString();
+    this.status = false;
+    this.species = '';
+  }
+
+  newName(value) {
+    return this.nickname = value;
+  }
+
+  gotFixed() {
+    return this.status = true;
+  }
+
+  changeIntake(value){
+    let d = new Date(value);
+    this.intake = d.toDateString();
+    return this.intake;
+  }
+}
+
 class Dog {
   constructor() {
     this.nickname = '';
@@ -59,6 +82,27 @@ class AnimalShelter {
     this.allPets = [];
   }
 
+  newPet(name, species){
+    let p = new Pet();
+    p.nickname = name;
+    p.intake = new Date().toDateString();
+    p.species = species;
+    this.enqueue(p);
+    return p;
+  }
+
+  enqueue(p){
+    if(p.species == 'cat'){
+      this.cats.enqueue(p);
+      this.allPets.push(p);
+      return p;
+    }else if(p.species == 'dog'){
+      this.dogs.enqueue(p);
+      this.allPets.push(p);
+      return(p);
+    }
+  }
+
   newDog(name) {
     let d = new Dog();
     d.nickname = name;
@@ -77,20 +121,15 @@ class AnimalShelter {
     return c;
   }
 
-  getCat() {
-    return this.cats.dequeue();
-  }
-
-  getDog() {
-    return this.dogs.dequeue();
-  }
-
   dequeue(pref){
     if(pref == 'dog'){
-      return this.getDog();
+      let d = this.dogs.dequeue();
+
+      return d;
     }
     else if(pref == 'cat'){
-      return this.getCat();
+      let c = this.cats.dequeue();
+      return c;
     }
     else{
       throw new Error('Please choose a dog or a cat.');
