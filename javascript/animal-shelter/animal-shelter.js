@@ -73,6 +73,18 @@ class AnimalShelter {
     return this.dogs.dequeue();
   }
 
+  dequeue(pref){
+    if(pref == 'dog'){
+      return this.getDog();
+    }
+    else if(pref == 'cat'){
+      return this.getCat();
+    }
+    else{
+      throw new Error('Please choose a dog or a cat.');
+    }
+  }
+
   getLongest() {
     if (this.cats && this.dogs) {
       let firstCat = this.cats.peek();
