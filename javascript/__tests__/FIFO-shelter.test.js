@@ -65,4 +65,29 @@ describe("FIFO - Animal Shelter Tests", () => {
     expect(result3.value.nickname).toEqual('Reptar');
   });
 
+  test('05. Can dequeue a pet based on preference (Dog).', () => {
+    let shelter = new AnimalShelter();
+    shelter.newCat('Mr.Meowgi', false);
+    shelter.newDog('Maya', true);
+    shelter.newCat('Dumbledore', true);
+    shelter.newCat('Reptar', false);
+    shelter.newDog('Riku', true);
+    shelter.newDog('Winky', true);
+
+    let result = shelter.dequeue('dog');
+    console.log(result);
+    console.log(result.value.nickname);
+    expect(result.value.nickname).toEqual('Maya');
+
+    let result2 = shelter.dequeue('dog');
+    console.log(result2);
+    console.log(result2.value.nickname);
+    expect(result2.value.nickname).toEqual('Riku');
+
+    let result3 = shelter.dequeue('dog');
+    console.log(result3);
+    console.log(result3.value.nickname);
+    expect(result3.value.nickname).toEqual('Winky');
+  });
+
 });
