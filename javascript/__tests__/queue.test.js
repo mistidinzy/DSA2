@@ -137,6 +137,6 @@ describe("Queue Tests", () => {
 
     let result = queue.qToString();
 
-    expect(result).toEqual('NULL <- (BACK) 5 <- 4 <- 3 <- 2 <- 1 (FRONT)');
+    expect(result).toEqual('null <- (back) 5 <- 4 <- 3 <- 2 <- 1 (front)');
   });
 });
