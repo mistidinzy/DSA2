@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-let Queue = require("../stack-and-queue/queue");
+let Queue = require('../stack-and-queue/queue');
 
 class Dog {
   constructor() {
-    this.nickname = "";
+    this.nickname = '';
     this.intake = null;
     this.status = false;
-    this.species = "dog";
+    this.species = 'dog';
   }
 
   newName(value) {
@@ -18,15 +18,21 @@ class Dog {
   gotFixed() {
     this.status = true;
     return this.status;
+  }
+
+  changeIntake(value){
+    let d = new Date(value);
+    this.intake = d.toDateString();
+    return this.intake;
   }
 }
 
 class Cat {
   constructor() {
-    this.nickname = "";
+    this.nickname = '';
     this.intake = null;
     this.status = false;
-    this.species = "cat";
+    this.species = 'cat';
   }
 
   newName(value) {
@@ -37,6 +43,12 @@ class Cat {
   gotFixed() {
     this.status = true;
     return this.status;
+  }
+
+  changeIntake(value){
+    let d = new Date(value);
+    this.intake = d.toDateString();
+    return this.intake;
   }
 }
 
@@ -47,21 +59,19 @@ class AnimalShelter {
     this.allPets = [];
   }
 
-  newDog(name, status) {
+  newDog(name) {
     let d = new Dog();
     d.nickname = name;
-    d.status = status;
     d.intake = new Date().toDateString();
-    this.allPets.push(d.nickname);
+    this.allPets.push(d);
     return this.dogs.enqueue(d);
   }
 
-  newCat(name, status) {
+  newCat(name) {
     let c = new Cat();
     c.nickname = name;
-    c.status = status;
     c.intake = new Date().toDateString();
-    this.allPets.push(c.nickname);
+    this.allPets.push(c);
     return this.cats.enqueue(c);
   }
 
@@ -104,4 +114,4 @@ class AnimalShelter {
   }
 }
 
-(module.exports = AnimalShelter), Dog, Cat;
+module.exports = AnimalShelter, Dog, Cat;
