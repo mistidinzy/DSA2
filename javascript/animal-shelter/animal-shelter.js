@@ -73,7 +73,7 @@ class AnimalShelter {
       return this.dogs.dequeue();
     } else if (pref == "cat") {
       return this.cats.dequeue();
-    } else throw new Error("Please choose a pet.");
+    } else return this.getLongest();
   }
 
   adoptDog() {
@@ -93,7 +93,7 @@ class AnimalShelter {
       arr2.push(
         `${element.species.toUpperCase()}: ${element.nickname} ${
           element.intake
-        } ${element.status}`
+        }`
       );
     });
     return arr2;
@@ -135,6 +135,19 @@ class AnimalShelter {
       found = arr[index];
       return arr.indexOf(found);
     } else return "Not Found";
+  }
+
+  getLongest() {
+    let cat = this.cats.front.value;
+    let dog = this.dogs.front.value;
+    let catTime = cat.intake;
+    let dogTime = dog.intake;
+
+    if (catTime > dogTime) {
+      return this.dogs.dequeue();
+    } else if (dogTime > catTime) {
+      return this.cats.dequeue();
+    }
   }
 }
 
