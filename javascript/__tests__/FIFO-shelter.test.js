@@ -59,7 +59,6 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newCat('Noodle');
     shelter.newDog('Cheeseball');
 
-    
     // console.log(shelter);
     // console.log(shelter.allPets);
   });
@@ -81,17 +80,14 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newDog('Steve');
     shelter.newCat('Noodle');
     shelter.newDog('Cheeseball');
-
-    console.log(shelter);
-    console.log(shelter.allPets);
-
     shelter.newPet('Pancake', 'dog');
 
-    console.log(shelter);
-    console.log(shelter.allPets);
+    let allPets2 = [];
 
-    shelter.newPet('Peaches', 'cat');
-    console.log('SHELTER = ', shelter);
-    console.log('ALLPETS = ', shelter.allPets);
+    shelter.allPets.forEach(element => allPets2.push(`${element.species.toUpperCase()}: ${element.nickname} - Intake Date: ${element.intake} - Spayed/Neutered: ${element.status}`));
+
+    console.log(allPets2);
+    console.log(shelter.getAll());
+
   });
 });

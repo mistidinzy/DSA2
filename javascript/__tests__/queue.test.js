@@ -147,10 +147,8 @@ describe("Queue Tests", () => {
     q.enqueue(3);
     q.enqueue(4);
     q.enqueue(5);
-
     let result = q.includes(3);
     expect(result).toBeTruthy();
-
     let r2 = q.includes(6);
     expect(r2).toBeFalsy();
   });

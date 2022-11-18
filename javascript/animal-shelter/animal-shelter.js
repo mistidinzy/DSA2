@@ -142,6 +142,13 @@ class AnimalShelter {
   //   //!!if number is smaller, then tenure is longer!!//
 
   // }
+
+  getAll(){
+    let arr1 = this.allPets;
+    let arr2 = [];
+    arr1.forEach(element => { arr2.push(`${element.species.toUpperCase()}: ${element.nickname} - Intake Date: ${element.intake} - Spayed/Neutered: ${element.status}`);});
+    return arr2;
+  }
 }
 
 module.exports = AnimalShelter, Dog, Cat;
