@@ -5,7 +5,7 @@ let Queue = require('../stack-and-queue/queue');
 class Pet{
   constructor(){
     this.nickname = '';
-    this.intake = new Date().toDateString();
+    this.intake = new Date().toLocaleDateString();
     this.status = false;
     this.species = '';
   }
@@ -20,7 +20,7 @@ class Pet{
 
   changeIntake(value){
     let d = new Date(value);
-    this.intake = d.toDateString();
+    this.intake = d.toLocaleDateString();
     return this.intake;
   }
 }
@@ -85,7 +85,7 @@ class AnimalShelter {
   newPet(name, species){
     let p = new Pet();
     p.nickname = name;
-    p.intake = new Date().toDateString();
+    p.intake = new Date().toLocaleDateString();
     p.species = species;
     this.enqueue(p);
     return p;
@@ -106,7 +106,7 @@ class AnimalShelter {
   newDog(name) {
     let d = new Dog();
     d.nickname = name;
-    d.intake = new Date().toDateString();
+    d.intake = new Date().toLocaleDateString();
     this.allPets.push(d);
     this.dogs.enqueue(d);
     return d;
@@ -115,7 +115,7 @@ class AnimalShelter {
   newCat(name) {
     let c = new Cat();
     c.nickname = name;
-    c.intake = new Date().toDateString();
+    c.intake = new Date().toLocaleDateString();
     this.allPets.push(c);
     this.cats.enqueue(c);
     return c;
@@ -146,7 +146,7 @@ class AnimalShelter {
   getAll(){
     let arr1 = this.allPets;
     let arr2 = [];
-    arr1.forEach(element => { arr2.push(`${element.species.toUpperCase()}: ${element.nickname} - Intake Date: ${element.intake} - Spayed/Neutered: ${element.status}`);});
+    arr1.forEach(element => { arr2.push(`${element.species} ${element.nickname} ${element.intake} ${element.status}`);});
     return arr2;
   }
 }
