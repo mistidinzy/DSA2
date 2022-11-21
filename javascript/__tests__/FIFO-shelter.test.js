@@ -62,7 +62,15 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newPet("Cheeseball", "dog");
     shelter.newPet("Pancake", "dog");
 
-    console.log(shelter.getAll());
+    let result = shelter.getAll();
+
+    expect(result).toEqual([
+      "CAT: Mr.Meowgi 11/18/2022",
+      "DOG: Steve 11/18/2022",
+      "CAT: Noodle 11/18/2022",
+      "DOG: Cheeseball 11/18/2022",
+      "DOG: Pancake 11/18/2022",
+    ]);
   });
 
   test("07. Dequeue without a preference returns pet with longest tenure.", () => {
@@ -77,7 +85,10 @@ describe("FIFO - Animal Shelter Tests", () => {
     d1.changeIntake("05/05/2015");
     console.log("AFTER: ", shelter.getAll());
 
-    console.log(shelter.getLongest(), "!!!THIS SHOULD BE STEVE!!!");
+    console.log(
+      shelter.getLongest(),
+      "!!!THIS SHOULD BE STEVE!!! WHY AREN'T YOU STEVE"
+    );
   });
 
   test("08. Can update an intake date.", () => {
