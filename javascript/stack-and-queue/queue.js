@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-let Node = require('../linked-list/node');
+let Node = require("../linked-list/node");
 
 class Queue {
   constructor() {
@@ -21,6 +21,17 @@ class Queue {
     }
   }
 
+  includes(value) {
+    let current = this.front;
+    while (current !== null) {
+      if (current.value === value) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
+
   enqueue(value) {
     let newNode = new Node(value);
 
@@ -35,7 +46,7 @@ class Queue {
 
   dequeue() {
     if (!this.front) {
-      throw new Error('Queue is already empty!');
+      throw new Error("Queue is already empty!");
     } else {
       let temp = this.front;
       this.front = this.front.next;
@@ -48,7 +59,7 @@ class Queue {
 
   dequeueUntilEmpty() {
     if (!this.front) {
-      throw new Error('Queue is already empty!');
+      throw new Error("Queue is already empty!");
     } else {
       let count = this.length;
       for (let i = 0; i < count; i++) {
@@ -63,19 +74,19 @@ class Queue {
     this.length = 0;
   }
 
-  qToString(){
-    let bk = "NULL <- (BACK)";
-    let fr = "(FRONT)";
+  qToString() {
+    let bk = "null <- (back)";
+    let fr = "(front)";
     let arr = [];
     let current = this.front;
 
-    for(let i = 0; i < this.length; i++){
+    for (let i = 0; i < this.length; i++) {
       arr.push(current.value);
       current = current.next;
     }
 
     arr.reverse();
-    let strung = arr.join(' <- ');
+    let strung = arr.join(" <- ");
 
     let final = `${bk} ${strung} ${fr}`;
     return final;

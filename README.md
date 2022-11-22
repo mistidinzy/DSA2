@@ -1,15 +1,36 @@
 # Data Structures and Algorithms
 
+---
+
+## 301 - Javascript
+
+---
+
 ## 401 - Javascript
 
-| Course Module | Topic |
-|-----------------|-----------|
-| 01 | [Arrays](/javascript/array/README.md) |
-| 02 | [Linked Lists](/javascript/linked-list/README.md) |
-| 03 | [Stacks, Queues](/javascript/stack-and-queue/README.md) |
-| 04 | [Trees](/javascript/tree/README.md) |
-| 06 | [Sorting](/javascript/sorting/README.md) |
-| 07 | [Hash Tables](/javascript/hash-table/README.md) |
-| 08 | [Graphs](/javascript/graph/README.md) |
+---
+
+### [Arrays](/javascript/array/README.md)
+
+- [Array Reverse](/javascript/array/array-reverse.js)
+
+### [Linked Lists](/javascript/linked-list/README.md)
+
+- [Linked List Zip](/javascript/linked-list/zipList.js)
+
+### [Stacks, Queues](/javascript/stack-and-queue/README.md)
+
+- [Pseudo-Queue](/javascript/stack-and-queue/pseudo-queue.js)
+- [First In, First Out Animal Shelter](/javascript/animal-shelter/animal-shelter.md)
+
+### [Trees](/javascript/tree/README.md)
+
+### [Hash Tables](/javascript/hash-table/README.md)
+
+### [Graphs](/javascript/graph/README.md)
+
+---
+
+### [Sorting](/javascript/sorting/README.md)
 
 ---
