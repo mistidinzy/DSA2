@@ -91,7 +91,7 @@ class AnimalShelter {
     let arr2 = [];
     arr1.forEach((element) => {
       arr2.push(
-        ` [${element.nickname} (${element.species.toUpperCase()}) [${element.intake}]`);
+        `${element.nickname} ${element.species.toUpperCase()} ${element.intake}`);
     });
     return arr2.toString();
   }
