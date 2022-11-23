@@ -128,16 +128,4 @@ describe('Stack Tests', () => {
     stack.push(1);
     expect(stack.top.value).toEqual(1);
   });
-
-  // test('CC10-S.15: Can get last value in stack.', () => {
-  //   let stack = new Stack().fromArray([1,2,3,4,5]);
-  //   let result = stack.getLast();
-  //   expect(result).toEqual(5);
-  // });
-
-  // test('CC10-S.16: GetLast on empty stack throws error.', () => {
-  //   let stack = new Stack();
-  //   expect(() => {stack.getLast()}).toThrow(Error);
-  // });
-
 })
