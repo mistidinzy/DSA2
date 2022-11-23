@@ -85,19 +85,6 @@ class Stack {
     let strung = (tp += str += "-> N");
     return strung;
   }
-
-  // getLast() {
-  //   if (!this.top) {
-  //     throw new Error('This stack is empty!');
-  //   } else {
-  //     let length = this.count;
-
-  //     for (let i = 0; i < length - 1; i++) {
-  //       this.pop();
-  //     }
-  //     return this.top.value;
-  //   }
-  // }
 }
 
 module.exports = Stack;
