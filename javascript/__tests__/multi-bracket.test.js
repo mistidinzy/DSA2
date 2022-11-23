@@ -3,7 +3,7 @@
 const { validateBrackets } = require('../stack-and-queue/multi-bracket');
 
 describe("Multi-Bracket Validation", () => {
-  test('MBV-01. Can correctly push brackets into appropriate stacks.', () => {
+  test('MBV-01: Can correctly validate brackets, in several string variations.', () => {
     let s1 = '{[( a b c )]}';
     let s2 = '[(]{}';
     let s3 = '';
@@ -17,9 +17,9 @@ describe("Multi-Bracket Validation", () => {
     let r5 = validateBrackets(s5);
 
     expect(r1).toBeTruthy();
-    expect(r2).toBeTruthy();
+    expect(r2).toBeFalsy();
     expect(r3).toBeTruthy();
-    expect(r4).toBeTruthy();
+    expect(r4).toBeFalsy();
     expect(r5).toBeTruthy();
-  });
+  })
 });
