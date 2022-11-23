@@ -63,26 +63,23 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newPet("Pancake", "dog");
 
     let result = shelter.getAll();
-    console.log(result);
+
+    let restr = result.toString();
+    console.log(restr);
 
   });
 
   test("07. Dequeue without a preference returns pet with longest tenure.", () => {
     let shelter = new AnimalShelter();
     shelter.newPet("Mr.Meowgi", "cat");
-    // let d1 = shelter.newPet("Steve", "dog");
+    let d1 = shelter.newPet("Steve", "dog");
 
     shelter.newPet("Noodle", "cat");
     shelter.newPet("Cheeseball", "dog");
 
-    // console.log("BEFORE: ", shelter.getAll());
-    // d1.changeIntake("05/05/2015");
-    // console.log("AFTER: ", shelter.getAll());
-
-    // console.log(
-    //   shelter.getLongest(),
-    //   "!!!THIS SHOULD BE STEVE!!! WHY AREN'T YOU STEVE"
-    // );
+    console.log("BEFORE:", shelter.getAll());
+    d1.changeIntake("05/05/2015");
+    console.log("AFTER:", shelter.getAll());
   });
 
   test("08. Can update an intake date.", () => {

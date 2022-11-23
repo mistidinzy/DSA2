@@ -91,12 +91,9 @@ class AnimalShelter {
     let arr2 = [];
     arr1.forEach((element) => {
       arr2.push(
-        `${element.species.toUpperCase()}: ${element.nickname} ${
-          element.intake
-        }`
-      );
+        ` [${element.nickname} (${element.species.toUpperCase()}) [${element.intake}]`);
     });
-    return arr2;
+    return arr2.toString();
   }
 
   findPet(p) {
@@ -152,71 +149,3 @@ class AnimalShelter {
 }
 
 module.exports = AnimalShelter;
-
-// class Dog {
-//   constructor() {
-//     this.nickname = '';
-//     this.intake = null;
-//     this.status = false;
-//     this.species = 'dog';
-//   }
-
-//   newName(value) {
-//     this.nickname = value;
-//     return this.nickname;
-//   }
-
-//   gotFixed() {
-//     this.status = true;
-//     return this.status;
-//   }
-
-//   changeIntake(value){
-//     let d = new Date(value);
-//     this.intake = d.toDateString();
-//     return this.intake;
-//   }
-// }
-
-// class Cat {
-//   constructor() {
-//     this.nickname = '';
-//     this.intake = null;
-//     this.status = false;
-//     this.species = 'cat';
-//   }
-
-//   newName(value) {
-//     this.nickname = value;
-//     return this.nickname;
-//   }
-
-//   gotFixed() {
-//     this.status = true;
-//     return this.status;
-//   }
-
-//   changeIntake(value){
-//     let d = new Date(value);
-//     this.intake = d.toDateString();
-//     return this.intake;
-//   }
-// }
-
-// newDog(name) {
-//   let d = new Dog();
-//   d.nickname = name;
-//   d.intake = new Date().toLocaleDateString();
-//   this.allPets.push(d);
-//   this.dogs.enqueue(d);
-//   return d;
-// }
-
-// newCat(name) {
-//   let c = new Cat();
-//   c.nickname = name;
-//   c.intake = new Date().toLocaleDateString();
-//   this.allPets.push(c);
-//   this.cats.enqueue(c);
-//   return c;
-// }
