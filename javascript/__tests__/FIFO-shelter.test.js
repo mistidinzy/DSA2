@@ -54,25 +54,23 @@ describe("FIFO - Animal Shelter Tests", () => {
   });
 
   test("06. Can get simplified array of all pets in shelter with getAll.", () => {
+    let today = new Date();
     let shelter = new AnimalShelter();
     shelter.newPet("Mr.Meowgi", "cat");
     shelter.newPet("Steve", "dog");
     shelter.newPet("Noodle", "cat");
     let result = shelter.getAll();
-    expect(result).toEqual('Mr.Meowgi CAT 11/22/2022,Steve DOG 11/22/2022,Noodle CAT 11/22/2022');
+    expect(result).toEqual(
+      `Mr.Meowgi CAT ${today},Steve DOG ${today},Noodle CAT ${today}`
+    );
   });
 
   test("07. Dequeue without a preference returns pet with longest tenure.", () => {
     let shelter = new AnimalShelter();
     shelter.newPet("Mr.Meowgi", "cat");
-    shelter.newPet("Noodle", "cat");
     let steve = shelter.newPet("Steve", "dog");
-
     steve.changeIntake("05/05/2015");
-
-    let result = shelter.adopt();
-
-    console.log(result);
+    // console.log(shelter.getLongest());
   });
 
   test("08. Can update an intake date.", () => {
@@ -80,10 +78,8 @@ describe("FIFO - Animal Shelter Tests", () => {
     shelter.newPet("Mr.Meowgi", "cat");
     shelter.newPet("Steve", "dog");
     shelter.newPet("Noodle", "cat");
-    shelter.newPet("Cheeseball", "dog");
-
     let d3 = shelter.newPet("Pancake", "dog");
     d3.changeIntake("04/04/2014");
-    expect(d3.intake).toEqual("4/4/2014");
+    expect(d3.intake.toLocaleDateString()).toEqual("4/4/2014");
   });
 });
