@@ -22,6 +22,7 @@
 
 - [Pseudo-Queue](/javascript/stack-and-queue/pseudo-queue.js)
 - [First In, First Out Animal Shelter](/javascript/animal-shelter/animal-shelter.md)
+- [Multi-Bracket Validation](/javascript/stack-and-queue/multi-bracket.js)
 
 ### [Trees](/javascript/tree/README.md)
 
