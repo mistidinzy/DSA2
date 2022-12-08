@@ -1,12 +1,20 @@
 # Data Structures - Arrays
 
-> 🏡 **[**Home**](../../README.md)**
+> ## 🏡 **[**Home**](../../README.md)**
 
 ---
 
-## 1️⃣ Array - Reverse
+### Skip to:
 
-## Feature Tasks
+> ### [Array Reverse](#1️-array-reverse)
+>
+> ### [Array Insert Shift](#2-array-insertshift)
+
+---
+
+## 1️: Array-Reverse
+
+### Feature Tasks
 
 Write a function called `reverseArray` which takes in an array as an argument, and returns an array with elements in reversed order.
 
@@ -44,6 +52,10 @@ In other words, use a different algorithm & pseudocode to solve the same problem
 
 ---
 
-## 2️⃣ Array - Insert Shift
+## 2: Array-InsertShift
+
+---
+
+## 3: Array-BinarySearch
 
 ---
