@@ -23,8 +23,6 @@
 
 ---
 
----
-
 ## 1. Implementation
 
 > Using a `Linked List` as the underlying data storage mechanism, implement both a `Stack` and a `Queue`.
@@ -125,8 +123,6 @@ You have access to the `Node` class and all the properties on the `LinkedList` c
 
 ---
 
----
-
 ## 2. PseudoQueue
 
 > Branch Name: `stack-queue-pseudo`
@@ -167,8 +163,6 @@ For each method that you define, write test assertions for the following conditi
 
 ---
 
----
-
 ## 3. "First In, First Out" Animal Shelter
 
 > Branch Name: `stack-queue-animal-shelter`
@@ -196,8 +190,6 @@ For each method that you define, write test assertions for the following conditi
 ## Stretch Goal
 
 If a preference isn't specified, then return whichever animal has been waiting in the shelter the ***longest***.
-
----
 
 ---
 
