@@ -5,7 +5,7 @@ let Queue = require("../stack-and-queue/queue");
 class Pet {
   constructor() {
     this.nickname = "";
-    this.intake = new Date().toLocaleDateString();
+    this.intake = new Date();
     this.status = false;
     this.species = "";
   }
@@ -25,7 +25,7 @@ class Pet {
 
   changeIntake(value) {
     let d = new Date(value);
-    this.intake = d.toLocaleDateString();
+    this.intake = d;
     return this.intake;
   }
 
@@ -50,7 +50,7 @@ class AnimalShelter {
   newPet(name, species) {
     let p = new Pet();
     p.nickname = name;
-    p.intake = new Date().toLocaleDateString();
+    p.intake = new Date();
     p.species = species;
     this.enQ(p);
     return p;
@@ -67,6 +67,8 @@ class AnimalShelter {
       return p;
     }
   }
+
+  //------------------------------------------------------------------------------------//
 
   adopt(pref) {
     if (pref == "dog") {
@@ -86,18 +88,21 @@ class AnimalShelter {
     return c;
   }
 
+  //------------------------------------------------------------------------------------//
+
+
   getAll() {
     let arr1 = this.allPets;
     let arr2 = [];
     arr1.forEach((element) => {
       arr2.push(
-        `${element.species.toUpperCase()}: ${element.nickname} ${
-          element.intake
-        }`
+        `${element.nickname} ${element.species.toUpperCase()} ${element.intake}`
       );
     });
-    return arr2;
+    return arr2.toString();
   }
+
+  //------------------------------------------------------------------------------------//
 
   findPet(p) {
     let arr = this.allPets;
@@ -118,6 +123,8 @@ class AnimalShelter {
     } else return "Not Found";
   }
 
+  //------------------------------------------------------------------------------------//
+
   findPetIndex(p) {
     let arr = this.allPets;
     let arr2 = [];
@@ -137,86 +144,20 @@ class AnimalShelter {
     } else return "Not Found";
   }
 
-  getLongest() {
-    let cat = this.cats.front.value;
-    let dog = this.dogs.front.value;
-    let catTime = cat.intake;
-    let dogTime = dog.intake;
+  //------------------------------------------------------------------------------------//
 
-    if (catTime > dogTime) {
-      return this.dogs.dequeue();
-    } else if (dogTime > catTime) {
-      return this.cats.dequeue();
-    }
-  }
+  // getLongest() {
+  //   let pets = this.allPets;
+  //   let intakes = [];
+
+  //   for (let i = 0; i < pets.length; i++) {
+  //     let pI = pets[i].intake;
+  //     intakes.push(pI.toLocaleDateString());
+  //   }
+
+  //   console.log(pets);
+  //   console.log(intakes);
+  // }
 }
 
 module.exports = AnimalShelter;
-
-// class Dog {
-//   constructor() {
-//     this.nickname = '';
-//     this.intake = null;
-//     this.status = false;
-//     this.species = 'dog';
-//   }
-
-//   newName(value) {
-//     this.nickname = value;
-//     return this.nickname;
-//   }
-
-//   gotFixed() {
-//     this.status = true;
-//     return this.status;
-//   }
-
-//   changeIntake(value){
-//     let d = new Date(value);
-//     this.intake = d.toDateString();
-//     return this.intake;
-//   }
-// }
-
-// class Cat {
-//   constructor() {
-//     this.nickname = '';
-//     this.intake = null;
-//     this.status = false;
-//     this.species = 'cat';
-//   }
-
-//   newName(value) {
-//     this.nickname = value;
-//     return this.nickname;
-//   }
-
-//   gotFixed() {
-//     this.status = true;
-//     return this.status;
-//   }
-
-//   changeIntake(value){
-//     let d = new Date(value);
-//     this.intake = d.toDateString();
-//     return this.intake;
-//   }
-// }
-
-// newDog(name) {
-//   let d = new Dog();
-//   d.nickname = name;
-//   d.intake = new Date().toLocaleDateString();
-//   this.allPets.push(d);
-//   this.dogs.enqueue(d);
-//   return d;
-// }
-
-// newCat(name) {
-//   let c = new Cat();
-//   c.nickname = name;
-//   c.intake = new Date().toLocaleDateString();
-//   this.allPets.push(c);
-//   this.cats.enqueue(c);
-//   return c;
-// }
